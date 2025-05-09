@@ -17,19 +17,21 @@ export function NavSheet({ className }: Props) {
     {
       title: "IMPORTHO",
       href: "/importho",
-      description: "Importho es una marca de productos de ortodoncia.",
     },
     {
       title: "GUMMETAL",
       href: "/gummetal",
-      description:
-        "Gummetal es una marca de productos de ortodoncia y su aprendizaje.",
     },
     {
-      title: "ERTTY",
+      title: "Todos los productos",
+      href: "/catalog",
+    },
+  ];
+
+  const courses = [
+    {
+      title: "Sistemas Ertty",
       href: "/ertty",
-      description:
-        "Sistemas Ertty es una organización que ofrece servicios de capacitación y formación en ortodoncia.",
     },
   ];
 
@@ -44,28 +46,36 @@ export function NavSheet({ className }: Props) {
         <SheetHeader>
           <nav className="flex flex-col gap-6 pt-2">
             <div className="space-y-4">
-              <h4 className="font-bold text-lg text-primary">Marcas</h4>
+              <h4 className="font-bold text-lg text-primary">Catálogo</h4>
               <div className="flex flex-col gap-2">
                 {brands.map((brand) => (
-                  <a
-                    key={brand.title}
-                    href={brand.href}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    {brand.title}
-                  </a>
+                  <SheetClose asChild key={brand.title}>
+                    <a
+                      href={brand.href}
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      {brand.title}
+                    </a>
+                  </SheetClose>
                 ))}
               </div>
             </div>
 
-            <SheetClose asChild>
-              <a
-                href="/catalog"
-                className="text-lg text-primary transition-colors font-bold"
-              >
-                Catálogo
-              </a>
-            </SheetClose>
+            <div className="space-y-4">
+              <h4 className="font-bold text-lg text-primary">Cursos</h4>
+              <div className="flex flex-col gap-2">
+                {courses.map((course) => (
+                  <SheetClose asChild key={course.title}>
+                    <a
+                      href={course.href}
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      {course.title}
+                    </a>
+                  </SheetClose>
+                ))}
+              </div>
+            </div>
 
             <SheetClose asChild>
               <a

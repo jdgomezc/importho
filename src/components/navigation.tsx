@@ -19,19 +19,25 @@ export function Navigation() {
     {
       title: "IMPORTHO",
       href: "/importho",
-      description: "Importho es una marca de productos de ortodoncia.",
+      // description: "Importho es una marca de productos de ortodoncia.",
     },
     {
       title: "GUMMETAL",
       href: "/gummetal",
-      description:
-        "Gummetal es una marca de productos de ortodoncia y su aprendizaje.",
+      // description: "Gummetal es una marca de productos de ortodoncia y su aprendizaje.",
     },
     {
-      title: "ERTTY",
+      title: "Todos los productos",
+      href: "/catalog",
+      // description: "Gummetal es una marca de productos de ortodoncia y su aprendizaje.",
+    },
+  ];
+
+  const courses = [
+    {
+      title: "Sistemas Ertty",
       href: "/ertty",
-      description:
-        "Sistemas Ertty es una organización que ofrece servicios de capacitación y formación en ortodoncia.",
+      // description: "Sistemas Ertty es una organización que ofrece servicios de capacitación y formación en ortodoncia.",
     },
   ];
 
@@ -41,25 +47,41 @@ export function Navigation() {
         <NavigationMenuList>
           <NavigationMenuItem>
             <NavigationMenuTrigger className={"text-zinc-600"}>
-              Marcas
+              Catálogo
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className="flex flex-col gap-2 w-96 relative">
+              <ul className="flex flex-col w-48 py-1 relative">
                 {brands.map((brand) => (
-                  <ListItem href={brand.href} title={brand.title}>
-                    {brand.description}
-                  </ListItem>
+                  <li className="w-full">
+                    <a
+                      href={brand.href}
+                      className="text-primary rounded-sm p-2 w-full flex hover:bg-zinc-100"
+                    >
+                      {brand.title}
+                    </a>
+                  </li>
                 ))}
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <a
-              href="/catalog"
-              className={cn(navigationMenuTriggerStyle(), "text-zinc-600")}
-            >
-              Catálogo
-            </a>
+            <NavigationMenuTrigger className={"text-zinc-600"}>
+              Cursos
+            </NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ul className="flex flex-col w-48 py-1 relative">
+                {courses.map((brand) => (
+                  <li className="w-full">
+                    <a
+                      href={brand.href}
+                      className="text-primary rounded-sm p-2 w-full flex hover:bg-zinc-100"
+                    >
+                      {brand.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
             <a
