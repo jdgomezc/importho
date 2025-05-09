@@ -69,7 +69,7 @@ export function Results({ products }: Props) {
         )}
       </h1>
       {filteredProducts.length > 0 ? (
-        <ul className="pb-32 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-x-6 gap-y-12 max-w-[90rem] place-items-center items-start">
+        <ul className="pb-32 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-x-6 gap-y-12 max-w-[90rem] place-items-center items-start mx-auto">
           {filteredProducts.map(
             ({ data: { title, price, img, brand, name } }, i) => {
               return (

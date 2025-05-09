@@ -1,0 +1,15 @@
+---
+// This component will be rendered on the client
+export const partial = true;
+import { Image } from "astro:assets";
+import whatsapp from "@/assets/whatsapp.tiff";
+---
+<a
+  href="https://wa.me/50230234928"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="fixed bottom-8 right-8 z-50 p-4 bg-green-500 rounded-full shadow-lg hover:bg-green-600 hover:scale-110 transition-all duration-300"
+  aria-label="Contact us on WhatsApp"
+>
+  <Image src={whatsapp} alt="WhatsApp" class="size-10" />
+</a>
