@@ -1,0 +1,10 @@
+---
+import { Navigation } from '@/components/navigation.tsx';
+import { Search } from '@/components/search.tsx';
+---
+<header class="bg-white  p-6 w-full">
+  <div class="mx-auto flex justify-between items-center">
+    <Navigation client:load />
+    <Search client:load />
+  </div>
+</header>

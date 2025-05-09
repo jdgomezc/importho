@@ -1,0 +1,20 @@
+---
+import Layout from "@/layouts/Catalog.astro";
+import { getCollection } from "astro:content";
+import ProductPreview from "@/components/product/preview.astro";
+
+const products = await getCollection("products");
+
+---
+<Layout>
+  <article class="flex flex-col h-full w-10/12 mx-auto my-auto gap-8 mt-4 md:mt-auto md:gap-16 pb-24 md:pb-0">
+    <h1 class="text-4xl text-center font-bold text-primary">Catálogo</h1>
+    <ul class="pb-32 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-x-6 gap-y-12 max-w-[90rem] place-items-center items-start">
+  {
+    products
+    .map(({ data: { title, price, img, brand, name }}) => (
+      <ProductPreview title={title} price={price} img={img} brand={brand} name={name} />
+    ))
+  }
+</ul>
+</Layout>

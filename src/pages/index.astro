@@ -1,12 +1,23 @@
 ---
 import "../styles/global.css";
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Carousel from '@/components/Carousel.tsx';
+import Layout from '@/layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import logo from '@/assets/importho.png';
+import FeaturedProducts from '@/components/featured-products.astro';
 ---
 
-<Layout >
-	<Welcome />
+<Layout>
+	<section class="flex justify-center pb-24 md:pb-32 pt-8">
+		<Image 
+				src={logo} 
+				alt="Importho Logo"
+				class="w-10/12 md:w-[50rem] h-auto" 
+				draggable="false"
+			/>
+	</section>
+
+	<Carousel client:load />
+
+	<FeaturedProducts />
 </Layout>

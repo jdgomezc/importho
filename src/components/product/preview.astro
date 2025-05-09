@@ -1,0 +1,15 @@
+---
+import { Image } from "astro:assets";
+
+const { title, img, brand, price, name } = Astro.props;
+---
+<li>
+  <a href={`/${name}`} class="w-72 flex flex-col gap-4 hover:scale-105 transition-all duration-300 cursor-pointer">
+    <Image src={img} alt={title} width={288} height={288} class="size-72 bg-gradient-to-b from-zinc-100 to-zinc-300 object-contain" draggable="false"/>
+  <section class="flex flex-col">
+    <h2 class="text-base font-bold text-zinc-700">{title}</h2>
+    <p class="text-sm text-zinc-500">{brand}</p>
+    <p class="text-sm text-zinc-600">{price}</p>
+  </section>
+  </a>
+</li>

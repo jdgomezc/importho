@@ -1,0 +1,38 @@
+---
+import "../styles/global.css";
+import Topbar from '@/layouts/Topbar.astro';
+import Footer from '@/layouts/Footer.astro';
+import logo from '@/assets/logo.png';
+
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href={logo.src} />
+		<meta name="generator" content={Astro.generator} />
+		<title>Importho</title>
+	</head>
+	<body class="flex flex-col min-h-screen">
+		<Topbar />
+		<main class="flex-1 flex">
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		min-height: 100dvh;
+		max-height: fit-content;
+		display: flex;
+		flex-direction: column;
+		color: #484848;
+	}
+</style>

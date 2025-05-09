@@ -1,0 +1,39 @@
+---
+import Layout from "@/layouts/Catalog.astro";
+import { getCollection, render } from "astro:content";
+import { Image } from "astro:assets";
+import { ChevronLeft } from "lucide-react";
+
+export async function getStaticPaths() {
+  const products = await getCollection("products");
+  return products.map((product) => ({
+    params: { productId: product.data.name },
+    props: { product },
+  }));
+}
+
+const { product } = Astro.props;
+const { data: { title, img, brand, price, name } } = product;
+
+const { Content } = await render(product)
+
+---
+<Layout>
+  <article class="flex flex-col h-full md:w-11/12 2xl:w-8/12 mx-auto my-auto gap-4 md:gap-8 px-8 md:px-0">
+      <button onclick="history.back()" type="button" class="flex -ml-3 flex-row hover:bg-zinc-200 rounded-md py-2 w-fit cursor-pointer pl-1 pr-3 transition-colors duration-250 ease-in-out">
+        <ChevronLeft className="size-6" />
+        <span>Atrás</span>
+      </button>
+      <article class="flex flex-col md:flex-row justify-between w-full">
+        <section class="flex flex-col gap-6">
+          <h1 class="text-4xl md:text-6xl font-bold">{title}</h1>
+          <p class="text-2xl md:text-5xl text-zinc-500">{brand}</p>
+          <p class="text-xl md:text-2xl text-zinc-600">{price}</p>
+          <Content class="text-zinc-100" />
+        </section>
+        <section>
+          <Image src={img} alt={title} width={288} height={288} class="w-full h-auto md:h-[30rem] md:w-[30rem] my-12 md:my-24 md:mt-0 bg-gradient-to-b from-zinc-100 to-zinc-300 object-contain" draggable="false"/>
+        </section>
+      </article>
+  </article>
+</Layout>

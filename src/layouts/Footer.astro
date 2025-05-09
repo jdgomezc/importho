@@ -1,0 +1,43 @@
+---
+import { Image } from 'astro:assets';
+import logo from '@/assets/importho.png';
+import { Phone, MessageCircle, Facebook, Instagram } from "lucide-react";
+---
+<footer class="bg-gradient-to-br from-primary to-blue-950 shadow-md py-12 px-6 w-full">
+  <div class="mx-auto w-full flex flex-col md:flex-row justify-between">
+    <div class="flex my-auto">
+      <a href="/">
+        <Image src={logo} alt="Importho Logo"  class="bg-white/95 p-2 rounded-md w-full h-auto md:h-32 md:w-auto" draggable="false" />
+      </a>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-12 md:gap-8 mt-16 md:mt-0">
+      <div class="col-span-1">
+        <h3 class="font-bold text-sm text-zinc-100 mb-4">Social</h3>
+        <ul class="space-y-3">
+          <li><a href="tel:+50230234928" class="text-sm text-zinc-200 hover:text-zinc-300"><Phone className="inline mr-2 h-4 w-4" />Teléfono</a></li>
+          <li><a href="https://wa.me/50230234928" target="_blank" rel="noopener noreferrer" class="text-sm text-zinc-200 hover:text-zinc-300"><MessageCircle className="inline mr-2 h-4 w-4" />WhatsApp</a></li>
+          <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="text-sm text-zinc-200 hover:text-zinc-300"><Facebook className="inline mr-2 h-4 w-4" />Facebook</a></li>
+          <li><a href="https://www.instagram.com/importho_gt/" target="_blank" rel="noopener noreferrer" class="text-sm text-zinc-200 hover:text-zinc-300"><Instagram className="inline mr-2 h-4 w-4" />Instagram</a></li>
+        </ul>
+      </div>
+
+      <div class="col-span-1">
+        <h3 class="font-bold text-sm text-zinc-100 mb-4">Marcas</h3>
+        <ul class="space-y-3">
+          <li><a href="/importho" class="text-sm text-zinc-200 hover:text-zinc-300">IMPORTHO</a></li>
+          <li><a href="/gummetal" class="text-sm text-zinc-200 hover:text-zinc-300">GUMMETAL</a></li>
+          <li><a href="/ertty" class="text-sm text-zinc-200 hover:text-zinc-300">ERTTY</a></li>
+        </ul>
+      </div>
+
+      <div class="col-span-1">
+        <h3 class="font-bold text-sm text-zinc-100 mb-4">Recursos</h3>
+        <ul class="space-y-3">
+          <li><a href="/about" class="text-sm text-zinc-200 hover:text-zinc-300">Sobre nosotros</a></li>
+          <li><a href="/contact" class="text-sm text-zinc-200 hover:text-zinc-300">Contáctanos</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
