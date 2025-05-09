@@ -3,7 +3,7 @@ import Layout from "@/layouts/Layout2.astro";
 import { Phone, Facebook, Instagram, MapPin } from "lucide-react";
 import whatsapp from "@/assets/whatsapp.tiff";
 import { Image } from "astro:assets";
-import { WHATSAPP_URL, FACEBOOK_URL, INSTAGRAM_URL, UBICATION_URL, PHONE_URL, PHONE_NUMBER } from "astro:env/server";
+import { WHATSAPP_URL, FACEBOOK_URL, INSTAGRAM_URL, PHONE_URL, PHONE_NUMBER } from "astro:env/server";
 ---
 <Layout>
   <article class="flex flex-col h-full w-10/12 md:w-11/12 2xl:w-8/12 mx-auto my-auto gap-8 md:gap-16 pb-16 md:pb-0">
@@ -34,11 +34,11 @@ import { WHATSAPP_URL, FACEBOOK_URL, INSTAGRAM_URL, UBICATION_URL, PHONE_URL, PH
         <span class="text-sm text-center">Síguenos en Instagram</span>
       </a>
 
-      <a href={UBICATION_URL} target="_blank" rel="noopener noreferrer" class="flex flex-col items-center gap-4 p-6 rounded-lg bg-gradient-to-br from-red-500/85 to-red-600/85 text-white hover:from-red-600/85 hover:to-red-700/85 transition-colors">
+      <button type="button" class="flex flex-col items-center gap-4 p-6 rounded-lg bg-gradient-to-br from-red-500/85 to-red-600/85 text-white hover:from-red-600/85 hover:to-red-700/85 transition-colors">
         <MapPin className="size-12" />
         <span class="text-lg font-medium">Ubicación</span>
         <span class="text-sm text-center">Encuéntranos en zona 11 de Ciudad Guatemala</span>
-      </a>
+      </button>
     </div>
 
   </article>

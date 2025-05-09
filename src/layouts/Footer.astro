@@ -1,8 +1,8 @@
 ---
 import { Image } from 'astro:assets';
 import logo from '@/assets/importho.png';
-import { Phone, Facebook, Instagram, MapPin, MessageCircle } from "lucide-react";
-import { WHATSAPP_URL, FACEBOOK_URL, INSTAGRAM_URL, UBICATION_URL, PHONE_URL, PHONE_NUMBER } from "astro:env/server";
+import { Phone, Facebook, Instagram, MessageCircle } from "lucide-react";
+import { WHATSAPP_URL, FACEBOOK_URL, INSTAGRAM_URL, PHONE_URL } from "astro:env/server";
 ---
 <footer class="bg-gradient-to-br from-primary to-blue-950 shadow-md py-12 px-6 w-full">
   <div class="mx-auto w-full flex flex-col md:flex-row justify-between">
@@ -20,7 +20,6 @@ import { WHATSAPP_URL, FACEBOOK_URL, INSTAGRAM_URL, UBICATION_URL, PHONE_URL, PH
           <li><a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" class="text-sm text-zinc-200 hover:text-zinc-300"><MessageCircle className="inline mr-2 h-4 w-4" />WhatsApp</a></li>
           <li><a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer" class="text-sm text-zinc-200 hover:text-zinc-300"><Facebook className="inline mr-2 h-4 w-4" />Facebook</a></li>
           <li><a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" class="text-sm text-zinc-200 hover:text-zinc-300"><Instagram className="inline mr-2 h-4 w-4" />Instagram</a></li>
-          <li><a href={UBICATION_URL} target="_blank" rel="noopener noreferrer" class="text-sm text-zinc-200 hover:text-zinc-300"><MapPin className="inline mr-2 h-4 w-4" />Ubicación</a></li>
         </ul>
       </div>
 
