@@ -4,4 +4,5 @@ price: Q 1,800.00
 img: /products/gummetal/pinza-de-torque.png
 brand: Gummetal
 name: pinza-de-torque
+slug: pinza-de-torque
 ---

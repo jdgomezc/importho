@@ -53,10 +53,6 @@ export function Results({ products }: Props) {
     return <p className="text-center text-lg">Cargando resultados...</p>;
   }
 
-  // You might want to use a utility or a shared component for product URLs if they are dynamic
-  const getProductUrl = (product: ClientProductEntry) =>
-    `/product/${product.id}`; // Example
-
   return (
     <article className="flex flex-col h-full w-10/12 mx-auto my-auto gap-8 mt-4 md:mt-auto md:gap-16 pb-24 md:pb-0">
       <h1 className="text-4xl text-center font-bold text-primary">
@@ -71,11 +67,11 @@ export function Results({ products }: Props) {
       {filteredProducts.length > 0 ? (
         <ul className="pb-32 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-x-6 gap-y-12 max-w-[90rem] place-items-center items-start mx-auto">
           {filteredProducts.map(
-            ({ data: { title, price, img, brand, name } }, i) => {
+            ({ data: { title, price, img, brand }, slug }, i) => {
               return (
                 <li key={i}>
                   <a
-                    href={`/${name}`}
+                    href={`/${slug}`}
                     className="w-72 flex flex-col gap-4 hover:scale-105 transition-all duration-300 cursor-pointer"
                   >
                     <img

@@ -1,15 +1,23 @@
 ---
 import { Image } from "astro:assets";
 
-const { title, img, brand, price, name } = Astro.props;
+const { title, img, brand, price, slug } = Astro.props;
 ---
 <li>
-  <a href={`/${name}`} class="w-72 flex flex-col gap-4 hover:scale-105 transition-all duration-300 cursor-pointer">
-    <Image src={img} alt={title} width={288} height={288} class="size-72 bg-gradient-to-b from-zinc-100 to-zinc-300 object-contain" draggable="false"/>
+  <a href={`/${slug}`} class="w-72 flex flex-col gap-4 hover:scale-105 transition-all duration-300 cursor-pointer">
+    <Image
+      src={img}
+      alt={title}
+      width={288}
+      height={288}
+      class="size-72 bg-gradient-to-b from-zinc-100 to-zinc-300 object-contain"
+      draggable="false"
+      transition:name={`img-${slug}`}
+    />
   <section class="flex flex-col">
-    <h2 class="text-base font-bold text-zinc-700">{title}</h2>
-    <p class="text-sm text-zinc-500">{brand}</p>
-    <p class="text-sm text-zinc-600">{price}</p>
+    <h2 class="text-base font-bold text-zinc-700" transition:name={`title-${slug}`}>{title}</h2>
+    <p class="text-sm text-zinc-500" transition:name={`brand-${slug}`}>{brand}</p>
+    <p class="text-sm text-zinc-600" transition:name={`price-${slug}`}>{price}</p>
   </section>
   </a>
 </li>

@@ -4,6 +4,7 @@ price: Q 1,200.00
 img: /products/gummetal/straight-wire.png
 brand: Gummetal
 name: straight-wire
+slug: straight-wire
 ---
 
 0.17 X 25 (BARRA)

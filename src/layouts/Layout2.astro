@@ -4,6 +4,7 @@ import Topbar from '@/layouts/Topbar.astro';
 import Footer from '@/layouts/Footer.astro';
 import logo from '@/assets/logo.png';
 import WhatsappButton from "@/components/WhatsappButton.astro";
+import { ClientRouter } from "astro:transitions";
 
 ---
 
@@ -15,6 +16,7 @@ import WhatsappButton from "@/components/WhatsappButton.astro";
 		<link rel="icon" type="image/svg+xml" href={logo.src} />
 		<meta name="generator" content={Astro.generator} />
 		<title>Importho</title>
+		<ClientRouter />
 	</head>
 	<body class="flex flex-col min-h-screen">
 		<Topbar />

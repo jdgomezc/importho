@@ -3,9 +3,10 @@
 export const partial = true;
 import { Image } from "astro:assets";
 import whatsapp from "@/assets/whatsapp.tiff";
+import { WHATSAPP_URL } from "astro:env/server";
 ---
 <a
-  href="https://wa.me/50230234928"
+  href={WHATSAPP_URL}
   target="_blank"
   rel="noopener noreferrer"
   class="fixed bottom-8 right-8 z-50 p-4 bg-green-500 rounded-full shadow-lg hover:bg-green-600 hover:scale-110 transition-all duration-300"

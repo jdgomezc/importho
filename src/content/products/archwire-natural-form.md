@@ -4,6 +4,7 @@ price: Q 600.00
 img: /products/gummetal/archwire-natural-form.png
 brand: Gummetal
 name: archwire-natural-form
+slug: archwire-natural-form
 ---
 
 - Q 600.00 (PAQUETE DE 5)

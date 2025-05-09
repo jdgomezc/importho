@@ -1,5 +1,5 @@
 ---
-import Layout from "@/layouts/Catalog.astro";
+import Layout from "@/layouts/Layout2.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
 import Results from "@/components/results";
 
@@ -8,6 +8,7 @@ const rawProducts: CollectionEntry<"products">[] = await getCollection("products
 // Map the raw product data to the structure expected by the Results component
 const products: ClientProductEntry[] = rawProducts.map(product => ({
   id: product.slug, // Assuming you use slug as the unique ID for products, adjust if it's product.id
+  slug: product.slug,
   data: {
     title: product.data.title,
     price: product.data.price, // Keep as string, Results component will parse

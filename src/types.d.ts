@@ -12,6 +12,7 @@ declare global {
   // This is the structure we expect for each item in the products prop
   interface ClientProductEntry {
     id: string; // or slug
+    slug: string;
     data: ProductData;
   }
 }

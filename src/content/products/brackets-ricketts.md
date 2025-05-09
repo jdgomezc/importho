@@ -4,6 +4,7 @@ price: Q 1,200.00
 img: /products/importho/brackets-ricketts.png
 brand: Importho
 name: brackets-ricketts
+slug: brackets-ricketts
 ---
 
 10 CASOS X Q1,200.00

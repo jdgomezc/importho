@@ -1,5 +1,5 @@
 ---
-import Layout from "@/layouts/Catalog.astro";
+import Layout from "@/layouts/Layout2.astro";
 import { getCollection } from "astro:content";
 import ProductPreview from "@/components/product/preview.astro";
 
@@ -11,9 +11,8 @@ const products = await getCollection("products");
     <h1 class="text-4xl text-center font-bold text-primary">Catálogo</h1>
     <ul class="pb-32 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-x-6 gap-y-12 max-w-[90rem] place-items-center items-start mx-auto">
   {
-    products
-    .map(({ data: { title, price, img, brand, name }}) => (
-      <ProductPreview title={title} price={price} img={img} brand={brand} name={name} />
+    products.map(({ data: { title, price, img, brand }, slug }) => (
+      <ProductPreview title={title} price={price} img={img} brand={brand} slug={slug} />
     ))
   }
 </ul>

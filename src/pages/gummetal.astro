@@ -1,5 +1,5 @@
 ---
-import Layout from "@/layouts/Catalog.astro";
+import Layout from "@/layouts/Layout2.astro";
 import { getCollection } from "astro:content";
 import ProductPreview from "@/components/product/preview.astro";
 
@@ -13,8 +13,8 @@ const products = await getCollection("products");
   {
     products
     .filter((product) => product.data.brand === "Gummetal")
-    .map(({ data: { title, price, img, brand, name }}) => (
-      <ProductPreview title={title} price={price} img={img} brand={brand} name={name} />
+    .map(({ data: { title, price, img, brand }, slug }) => (
+      <ProductPreview title={title} price={price} img={img} brand={brand} slug={slug} />
     ))
   }
 </ul>

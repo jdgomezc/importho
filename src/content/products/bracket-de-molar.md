@@ -4,6 +4,7 @@ price: Q 60.00
 img: /products/importho/bracket-de-molar.png
 brand: Importho
 name: bracket-de-molar
+slug: bracket-de-molar
 ---
 
 SET PARA LOS 4 MOLARES
