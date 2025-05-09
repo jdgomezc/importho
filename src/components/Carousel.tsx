@@ -10,7 +10,7 @@ import banner_1 from "@/assets/banner/banner-1.jpeg";
 import banner_2 from "@/assets/banner/banner-2.png";
 
 export default function ImagesCarousel() {
-  const height = "h-56 md:h-[50rem] 2xl:h-[70rem]";
+  const height = "h-fit";
 
   const images = [banner_1, banner_2];
 
@@ -32,12 +32,12 @@ export default function ImagesCarousel() {
             <div className="select-none">
               <Card className={"p-0 border-0"}>
                 <CardContent
-                  className={`flex aspect-square items-center justify-center p-0 ${height}`}
+                  className={`flex items-center justify-center p-0 ${height}`}
                 >
                   <img
                     src={src}
                     alt={`image_${i + 1}`}
-                    className="w-full h-full object-cover"
+                    className="w-full h-auto object-cover"
                     draggable="false"
                   />
                 </CardContent>
