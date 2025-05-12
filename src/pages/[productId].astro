@@ -18,6 +18,7 @@ const { data: { title, img, brand, price }, slug } = product;
 const { Content } = await render(product)
 
 ---
+
 <Layout>
   <article class="flex flex-col h-full md:w-11/12 2xl:w-8/12 mx-auto my-auto gap-4 md:gap-8 px-8 md:px-0">
       <button onclick="history.back()" type="button" class="flex -ml-3 flex-row hover:bg-zinc-200 rounded-md py-2 w-fit cursor-pointer pl-1 pr-3 transition-colors duration-250 ease-in-out">
@@ -26,8 +27,8 @@ const { Content } = await render(product)
       </button>
       <article class="flex flex-col md:flex-row justify-between w-full">
         <section class="flex flex-col gap-6">
-          <h1 class="text-4xl md:text-6xl font-bold" transition:name={`title-${slug}`}>{title}</h1>
-          <p class="text-2xl md:text-5xl text-zinc-500" transition:name={`brand-${slug}`}>{brand}</p>
+          <h1 class="text-4xl md:text-4xl 2xl:text-5xl font-bold max-w-[45rem]" transition:name={`title-${slug}`}>{title}</h1>
+          <p class="text-2xl md:text-3xl text-zinc-500" transition:name={`brand-${slug}`}>{brand}</p>
           <p class="text-xl md:text-2xl text-zinc-600" transition:name={`price-${slug}`}>{price}</p>
           <Content class="text-zinc-100" />
         </section>

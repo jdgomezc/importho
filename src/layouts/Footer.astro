@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import logo from '@/assets/importho.png';
+import logo from '@/assets/logo-white.png';
 import { Phone, Facebook, Instagram, MessageCircle } from "lucide-react";
 import { WHATSAPP_URL, FACEBOOK_URL, INSTAGRAM_URL, PHONE_URL } from "astro:env/server";
 ---
@@ -8,7 +8,7 @@ import { WHATSAPP_URL, FACEBOOK_URL, INSTAGRAM_URL, PHONE_URL } from "astro:env/
   <div class="mx-auto w-full flex flex-col md:flex-row justify-between">
     <div class="flex my-auto">
       <a href="/">
-        <Image src={logo} alt="Importho Logo"  class="bg-white/95 p-2 rounded-md w-full h-auto md:h-32 md:w-auto" draggable="false" />
+        <Image src={logo} alt="Importho Logo"  class="p-2 w-full h-auto md:h-32 md:w-auto bg-transparent" draggable="false" />
       </a>
     </div>
 
