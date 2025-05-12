@@ -8,11 +8,12 @@ import {
 
 import banner_1 from "@/assets/banner/banner-1.jpeg";
 import banner_2 from "@/assets/banner/banner-2.png";
+import banner_3 from "@/assets/banner/banner-3.jpg";
 
 export default function ImagesCarousel() {
   const height = "h-fit";
 
-  const images = [banner_1, banner_2];
+  const images = [banner_1, banner_2, banner_3];
 
   return (
     <Carousel
