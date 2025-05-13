@@ -6,8 +6,8 @@ import {
   CarouselItem,
 } from "@/components/ui/imaages-carousel";
 
-import banner_1 from "@/assets/banner/banner-1.png";
-import banner_2 from "@/assets/banner/banner-2.jpg";
+import banner_1 from "@/assets/banner/banner-1.jpg";
+import banner_2 from "@/assets/banner/banner-2.png";
 
 interface Props {
   courses: {
