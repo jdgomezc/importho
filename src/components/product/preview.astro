@@ -1,19 +1,25 @@
 ---
 import { Image } from "astro:assets";
+import { Loader2 } from "lucide-react";
 
 const { title, img, brand, price, slug } = Astro.props;
 ---
 <li>
   <a href={`/${slug}`} class="w-72 flex flex-col gap-4 hover:scale-105 transition-all duration-300 cursor-pointer">
-    <Image
-      src={img}
-      alt={title}
-      width={288}
-      height={288}
-      class="size-72 object-contain"
-      draggable="false"
-      transition:name={`img-${slug}`}
-    />
+    <div class="relative w-72 h-72">
+      <Image
+        src={img}
+        alt={title}
+        width={288}
+        height={288}
+        class="size-72 object-contain z-200 relative"
+        draggable="false"
+        transition:name={`img-${slug}`}
+      />
+      <div class="absolute inset-0 flex items-center justify-center">
+        <Loader2 className="animate-spin text-primary size-12 z-100" /> 
+      </div>
+    </div>
   <section class="flex flex-col">
     <h2 class="text-base font-bold text-zinc-700" transition:name={`title-${slug}`}>{title}</h2>
     <p class="text-sm text-zinc-500" transition:name={`brand-${slug}`}>{brand}</p>
