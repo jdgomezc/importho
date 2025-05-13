@@ -3,6 +3,10 @@ import { Image } from 'astro:assets';
 import logo from '@/assets/logo-white.png';
 import { Phone, Facebook, Instagram, MessageCircle } from "lucide-react";
 import { WHATSAPP_URL, FACEBOOK_URL, INSTAGRAM_URL, PHONE_URL } from "astro:env/server";
+import { getCollection } from 'astro:content';
+
+const courses = await getCollection("courses");
+
 ---
 <footer class="bg-gradient-to-br from-primary to-blue-950 shadow-md py-12 px-6 w-full">
   <div class="mx-auto w-full flex flex-col md:flex-row justify-between">
@@ -36,6 +40,7 @@ import { WHATSAPP_URL, FACEBOOK_URL, INSTAGRAM_URL, PHONE_URL } from "astro:env/
         <ul class="space-y-3">
           <li><a href="/importho" class="text-sm text-zinc-200 hover:text-zinc-300">IMPORTHO</a></li>
           <li><a href="/gummetal" class="text-sm text-zinc-200 hover:text-zinc-300">GUMMETAL</a></li>
+          <li><a href="/mouthwashes" class="text-sm text-zinc-200 hover:text-zinc-300">Enjuagues dentales</a></li>
           <li><a href="/catalog" class="text-sm text-zinc-200 hover:text-zinc-300">Todos los productos</a></li>
         </ul>
       </div>
@@ -43,7 +48,10 @@ import { WHATSAPP_URL, FACEBOOK_URL, INSTAGRAM_URL, PHONE_URL } from "astro:env/
       <div class="col-span-1">
         <h3 class="font-bold text-sm text-zinc-100 mb-4">Cursos</h3>
         <ul class="space-y-3">
-          <li><a href="/ertty" class="text-sm text-zinc-200 hover:text-zinc-300">ERTTY</a></li>
+          {courses.map(({ data: { title }, slug }) => (
+            <li><a href={`courses/${slug}`} class="text-sm text-zinc-200 hover:text-zinc-300">{title}</a></li>
+          ))}
+          <li><a href="/courses" class="text-sm text-zinc-200 hover:text-zinc-300">Todos los cursos</a></li>
         </ul>
       </div>
     </div>

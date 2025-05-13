@@ -12,7 +12,8 @@ const courses = await getCollection("courses");
     <ul class="flex flex-col gap-4 w-full">
   {
     courses.map(({ data: { title, img }, slug }) => (
-      <Image
+      <a href={slug}>
+        <Image
         src={img}
         alt={title}
         width={288}
@@ -20,6 +21,7 @@ const courses = await getCollection("courses");
         transition:name={`img-${slug}`}
         class="w-full h-auto" draggable="false"
       />
+      </a>
     ))
   }
 </ul>

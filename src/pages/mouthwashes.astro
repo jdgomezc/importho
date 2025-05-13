@@ -1,18 +1,31 @@
 ---
 import Layout from "@/layouts/Layout2.astro";
-import { getCollection } from "astro:content";
-import ProductPreview from "@/components/product/preview.astro";
+import { Image } from "astro:assets";
 
-const products = await getCollection("products");
+import mouthwash_1 from "@/assets/mouthwashes/mouthwasher-1.jpg";
+import mouthwash_2 from "@/assets/mouthwashes/mouthwasher-2.png";
+import mouthwash_3 from "@/assets/mouthwashes/mouthwasher-3.jpg";
+
+const mouthwashes = [
+  mouthwash_1,
+  mouthwash_2,
+  mouthwash_3,
+]
 
 ---
 <Layout>
-  <article class="flex flex-col h-full w-10/12 mx-auto my-auto gap-8 mt-4 md:mt-auto md:gap-16 pb-24 md:pb-0">
+  <article class="flex flex-col h-full w-10/12 mx-auto my-auto gap-8 mt-4 md:mt-auto md:gap-16 pb-12 md:pb-24">
     <h1 class="text-4xl text-center font-bold text-primary">Enjuagues dentales</h1>
-    <ul class="pb-32 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-x-6 gap-y-12 max-w-[90rem] place-items-center items-start mx-auto">
+    <ul class="flex flex-col gap-8 w-full">
   {
-    products.map(({ data: { title, price, img, brand }, slug }) => (
-      <ProductPreview title={title} price={price} img={img} brand={brand} slug={slug} />
+    mouthwashes.map((mouthwash, i) => (
+      <Image
+        src={mouthwash}
+        alt={`mouthwash-${i + 1}`}
+        width={288}
+        height={288}
+        class="w-full h-auto" draggable="false"
+      />
     ))
   }
 </ul>

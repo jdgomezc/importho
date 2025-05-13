@@ -34,6 +34,11 @@ export function Navigation({ courses }: Props) {
       // description: "Gummetal es una marca de productos de ortodoncia y su aprendizaje.",
     },
     {
+      title: "Enjuagues dentales",
+      href: "/mouthwashes",
+      // description: "Gummetal es una marca de productos de ortodoncia y su aprendizaje.",
+    },
+    {
       title: "Todos los productos",
       href: "/catalog",
       // description: "Gummetal es una marca de productos de ortodoncia y su aprendizaje.",
@@ -101,7 +106,7 @@ export function Navigation({ courses }: Props) {
         </NavigationMenuList>
       </NavigationMenu>
 
-      <NavSheet className="flex md:hidden" />
+      <NavSheet className="flex md:hidden" courses={courses} />
     </>
   );
 }

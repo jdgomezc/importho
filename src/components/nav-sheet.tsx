@@ -10,9 +10,13 @@ import { Menu } from "lucide-react";
 
 interface Props {
   className?: string;
+  courses: {
+    title: string;
+    slug: string;
+  }[];
 }
 
-export function NavSheet({ className }: Props) {
+export function NavSheet({ courses, className }: Props) {
   const brands = [
     {
       title: "IMPORTHO",
@@ -23,15 +27,13 @@ export function NavSheet({ className }: Props) {
       href: "/gummetal",
     },
     {
+      title: "Enjuagues dentales",
+      href: "/mouthwashes",
+      // description: "Gummetal es una marca de productos de ortodoncia y su aprendizaje.",
+    },
+    {
       title: "Todos los productos",
       href: "/catalog",
-    },
-  ];
-
-  const courses = [
-    {
-      title: "Sistemas Ertty",
-      href: "/ertty",
     },
   ];
 
@@ -47,7 +49,7 @@ export function NavSheet({ className }: Props) {
           <nav className="flex flex-col gap-6 pt-2">
             <div className="space-y-4">
               <h4 className="font-bold text-lg text-primary">Catálogo</h4>
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-4">
                 {brands.map((brand) => (
                   <SheetClose asChild key={brand.title}>
                     <a
@@ -63,17 +65,25 @@ export function NavSheet({ className }: Props) {
 
             <div className="space-y-4">
               <h4 className="font-bold text-lg text-primary">Cursos</h4>
-              <div className="flex flex-col gap-2">
-                {courses.map((course) => (
-                  <SheetClose asChild key={course.title}>
+              <div className="flex flex-col gap-4">
+                {courses?.map(({ title, slug }) => (
+                  <SheetClose asChild key={slug}>
                     <a
-                      href={course.href}
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                      href={slug}
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors max-w-72"
                     >
-                      {course.title}
+                      {title}
                     </a>
                   </SheetClose>
                 ))}
+                <SheetClose asChild>
+                  <a
+                    href={`/courses`}
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    Todos los cursos
+                  </a>
+                </SheetClose>
               </div>
             </div>
 

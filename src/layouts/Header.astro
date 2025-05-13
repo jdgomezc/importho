@@ -13,7 +13,7 @@ const courses = courses_collection.map((course) => ({
 
 <header class="bg-white  p-6 w-full">
   <div class="mx-auto flex justify-between items-center">
-    {courses && <Navigation client:load courses={courses} />}
+    <Navigation client:load courses={courses} />
     <Search client:load />
   </div>
 </header>
