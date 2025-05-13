@@ -14,7 +14,14 @@ import { forwardRef, type ComponentPropsWithoutRef } from "react";
 import type { ElementRef } from "react";
 import { NavSheet } from "@/components/nav-sheet";
 
-export function Navigation() {
+interface Props {
+  courses: {
+    title: string;
+    slug: string;
+  }[];
+}
+
+export function Navigation({ courses }: Props) {
   const brands = [
     {
       title: "IMPORTHO",
@@ -30,14 +37,6 @@ export function Navigation() {
       title: "Todos los productos",
       href: "/catalog",
       // description: "Gummetal es una marca de productos de ortodoncia y su aprendizaje.",
-    },
-  ];
-
-  const courses = [
-    {
-      title: "Sistemas Ertty",
-      href: "/ertty",
-      // description: "Sistemas Ertty es una organización que ofrece servicios de capacitación y formación en ortodoncia.",
     },
   ];
 
@@ -70,16 +69,24 @@ export function Navigation() {
             </NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="flex flex-col w-48 py-1 relative">
-                {courses.map((brand) => (
+                {courses?.map((course) => (
                   <li className="w-full">
                     <a
-                      href={brand.href}
+                      href={course.slug}
                       className="text-primary rounded-sm p-2 w-full flex hover:bg-zinc-100"
                     >
-                      {brand.title}
+                      {course.title}
                     </a>
                   </li>
                 ))}
+                <li className="w-full">
+                  <a
+                    href={"/courses"}
+                    className="text-primary rounded-sm p-2 w-full flex hover:bg-zinc-100"
+                  >
+                    Todos los cursos
+                  </a>
+                </li>
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>

@@ -6,14 +6,21 @@ import {
   CarouselItem,
 } from "@/components/ui/imaages-carousel";
 
-import banner_1 from "@/assets/banner/banner-1.jpeg";
-import banner_2 from "@/assets/banner/banner-2.png";
-import banner_3 from "@/assets/banner/banner-3.jpg";
+import banner_1 from "@/assets/banner/banner-1.png";
+import banner_2 from "@/assets/banner/banner-2.jpg";
 
-export default function ImagesCarousel() {
+interface Props {
+  courses: {
+    title: string;
+    slug: string;
+    img: string;
+  }[];
+}
+
+export default function ImagesCarousel({ courses }: Props) {
   const height = "h-fit";
 
-  const images = [banner_1, banner_2, banner_3];
+  const banners = [banner_1, banner_2];
 
   return (
     <Carousel
@@ -28,8 +35,8 @@ export default function ImagesCarousel() {
       className={`w-full ${height}`}
     >
       <CarouselContent>
-        {images.map(({ src }, i) => (
-          <CarouselItem key={i}>
+        {banners.map(({ src }, i) => (
+          <CarouselItem key={`banner-${i}`}>
             <div className="select-none">
               <Card className={"p-0 border-0"}>
                 <CardContent
@@ -37,13 +44,31 @@ export default function ImagesCarousel() {
                 >
                   <img
                     src={src}
-                    alt={`image_${i + 1}`}
+                    alt={`banner-${i + 1}`}
                     className="w-full h-auto object-cover"
                     draggable="false"
                   />
                 </CardContent>
               </Card>
             </div>
+          </CarouselItem>
+        ))}
+        {courses.map(({ slug, title, img }, i) => (
+          <CarouselItem key={`course-${i}`}>
+            <a href={slug} className="select-none">
+              <Card className={"p-0 border-0"}>
+                <CardContent
+                  className={`flex items-center justify-center p-0 ${height}`}
+                >
+                  <img
+                    src={img}
+                    alt={title}
+                    className="w-full h-auto object-cover"
+                    draggable="false"
+                  />
+                </CardContent>
+              </Card>
+            </a>
           </CarouselItem>
         ))}
       </CarouselContent>

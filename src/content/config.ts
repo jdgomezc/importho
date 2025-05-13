@@ -10,6 +10,15 @@ const products = defineCollection({
   }),
 });
 
+const courses = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    img: z.string(),
+    brand: z.string(),
+  }),
+});
+
 export const collections = {
   products,
+  courses,
 };

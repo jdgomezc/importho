@@ -1,0 +1,26 @@
+---
+import Layout from "@/layouts/Layout2.astro";
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+
+const courses = await getCollection("courses");
+
+---
+<Layout>
+  <article class="flex flex-col h-full w-10/12 mx-auto my-auto gap-8 mt-4 md:mt-auto md:gap-16 pb-24">
+    <h1 class="text-4xl text-center font-bold text-primary">Cursos</h1>
+    <ul class="flex flex-col gap-4 w-full">
+  {
+    courses.map(({ data: { title, img }, slug }) => (
+      <Image
+        src={img}
+        alt={title}
+        width={288}
+        height={288}
+        transition:name={`img-${slug}`}
+        class="w-full h-auto" draggable="false"
+      />
+    ))
+  }
+</ul>
+</Layout>

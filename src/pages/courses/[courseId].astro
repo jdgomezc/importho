@@ -1,0 +1,42 @@
+---
+import Layout from "@/layouts/Layout2.astro";
+import {
+  getCollection,
+  // render
+} from "astro:content";
+import { Image } from "astro:assets";
+import { ChevronLeft } from "lucide-react";
+
+export async function getStaticPaths() {
+  const courses = await getCollection("courses");
+  return courses.map((course) => ({
+    params: { courseId: course.slug },
+    props: { course },
+  }));
+}
+
+const { course } = Astro.props;
+const { data: { title, img, brand }, slug } = course;
+
+// const { Content } = await render(course)
+
+---
+
+<Layout>
+  <article class="flex flex-col h-full md:w-11/12 2xl:w-8/12 mx-auto my-auto gap-4 px-8 md:px-0 pb-16">
+      <button onclick="history.back()" type="button" class="flex -ml-3 flex-row hover:bg-zinc-200 rounded-md py-2 w-fit cursor-pointer pl-1 pr-3 transition-colors duration-250 ease-in-out">
+        <ChevronLeft className="size-6" />
+        <span>Atrás</span>
+      </button>
+      <article class="flex flex-col md:flex-row justify-between w-full">
+        <Image
+            src={img}
+            alt={title}
+            width={288}
+            height={288}
+            transition:name={`img-${slug}`}
+            class="w-full h-auto" draggable="false"
+          />
+      </article>
+  </article>
+</Layout>
