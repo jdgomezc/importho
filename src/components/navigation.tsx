@@ -18,6 +18,7 @@ interface Props {
   courses: {
     title: string;
     slug: string;
+    description?: string;
   }[];
 }
 
@@ -78,9 +79,14 @@ export function Navigation({ courses }: Props) {
                   <li className="w-full">
                     <a
                       href={course.slug}
-                      className="text-primary rounded-sm p-2 w-full flex hover:bg-zinc-100"
+                      className="rounded-sm p-2 w-full flex hover:bg-zinc-100 flex-col gap-1"
                     >
-                      {course.title}
+                      <h3 className="text-primary leading-none">
+                        {course.title}
+                      </h3>
+                      <p className="text-zinc-500 text-xs leading">
+                        {course?.description}
+                      </p>
                     </a>
                   </li>
                 ))}

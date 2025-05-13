@@ -15,6 +15,7 @@ const courses = defineCollection({
     title: z.string(),
     img: z.string(),
     brand: z.string(),
+    description: z.string().optional(),
   }),
 });
 

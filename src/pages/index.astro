@@ -9,7 +9,7 @@ import { getCollection } from "astro:content";
 
 const courses_collection = await getCollection("courses");
 
-const courses = courses_collection.map(({ data: { title, img }, slug }) => ({
+const courses = courses_collection.map(({ data: { title, img, description }, slug }) => ({
   title,
   slug: `/courses/${slug}`,
 	img,

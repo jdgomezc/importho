@@ -4,9 +4,10 @@ import { Search } from '@/components/search.tsx';
 import { getCollection } from "astro:content";
 
 const courses_collection = await getCollection("courses");
-const courses = courses_collection.map((course) => ({
-  title: course.data.title,
-  slug: `/courses/${course.slug}`,
+const courses = courses_collection.map(({ data: { title, description }, slug }) => ({
+  title: title,
+  slug: `/courses/${slug}`,
+  description,
 }));
 
 ---
