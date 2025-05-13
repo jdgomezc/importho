@@ -41,7 +41,7 @@ export function NavSheet({ courses, className }: Props) {
     <Sheet>
       <SheetTrigger asChild className={className}>
         <Button variant="outline">
-          <Menu className="size-6" />
+          <Menu className="size-4" />
         </Button>
       </SheetTrigger>
       <SheetContent side="left">
