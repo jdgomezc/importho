@@ -6,7 +6,7 @@ import {
   CarouselItem,
 } from "@/components/ui/imaages-carousel";
 
-import banner_1 from "@/assets/banner/banner.jpg";
+import mouthwashers from "@/assets/mouthwashers/mouthwasher-3.jpg";
 import banner_2 from "@/assets/banner/banner-2.png";
 
 interface Props {
@@ -20,7 +20,7 @@ interface Props {
 export default function ImagesCarousel({ courses }: Props) {
   const height = "h-fit";
 
-  const banners = [banner_1, banner_2];
+  const banners = [banner_2, mouthwashers];
 
   return (
     <Carousel
