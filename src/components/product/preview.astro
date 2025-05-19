@@ -12,12 +12,12 @@ const { title, img, brand, price, slug } = Astro.props;
         alt={title}
         width={288}
         height={288}
-        class="size-72 object-contain z-200 relative"
+        class="size-72 object-contain z-10 relative"
         draggable="false"
         transition:name={`img-${slug}`}
       />
       <div class="absolute inset-0 flex items-center justify-center">
-        <Loader2 className="animate-spin text-primary size-7 z-100" /> 
+        <Loader2 className="animate-spin text-primary size-7 z-0" /> 
       </div>
     </div>
   <section class="flex flex-col">
