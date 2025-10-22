@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { Loader2 } from "lucide-react";
 
 interface Props {
   products: ClientProductEntry[];
@@ -50,7 +51,11 @@ export function Results({ products }: Props) {
 
   if (isLoading) {
     // Optional: show a loading state, though filtering should be fast
-    return <p className="text-center text-lg">Cargando resultados...</p>;
+    return (
+      <article className="flex items-center justify-center h-120 w-full">
+        <Loader2 className="animate-spin text-primary size-8 my-auto flex" />
+      </article>
+    );
   }
 
   return (
@@ -79,6 +84,8 @@ export function Results({ products }: Props) {
                       alt={title}
                       className="size-72 bg-gradient-to-b from-zinc-100 to-zinc-300 object-contain"
                       draggable="false"
+                      loading="lazy"
+                      decoding="async"
                     />
                     <section className="flex flex-col">
                       <h2 className="text-base font-bold text-zinc-700">
