@@ -1,0 +1,19 @@
+---
+import { Image } from "astro:assets";
+
+const courses = [
+  {
+    title: "Cursos",
+    img: "/courses/pocnc.webp",
+  },
+];
+
+---
+
+<article class="flex justify-center w-full my-8 mt-16">
+  {
+    courses.map(({ title, img }) => (
+      <Image src={img} alt={title} width={288} height={288} class="w-10/12 md:w-7/12 h-auto" draggable="false" />
+    ))
+  }
+</article>

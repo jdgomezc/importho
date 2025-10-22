@@ -6,6 +6,7 @@ import { Image } from 'astro:assets';
 import logo from '@/assets/importho.png';
 import FeaturedProducts from '@/components/featured-products.astro';
 import { getCollection } from "astro:content";
+import Courses from '@/components/courses.astro';
 
 const courses_collection = await getCollection("courses");
 
@@ -28,6 +29,8 @@ const courses = courses_collection.map(({ data: { title, img, description }, slu
 	</section>
 
 	<Carousel client:load courses={courses} />
+
+	<Courses />
 
 	<FeaturedProducts />
 </Layout>
