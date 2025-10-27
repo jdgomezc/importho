@@ -8,12 +8,28 @@ const courses = [
   },
 ];
 
+const coursesVideos = [
+  "https://www.youtube.com/embed/r32B-f8lI58?autoplay=0&rel=0&modestbranding=1&showinfo=0",
+  "https://www.youtube.com/embed/kevIL0z3pfo?autoplay=0&rel=0&modestbranding=1&showinfo=0",
+]
+
 ---
 
-<article class="flex justify-center w-full my-8 mt-16">
+<article class="flex flex-col justify-center w-full my-8 mt-16 mx-auto items-center gap-16">
   {
     courses.map(({ title, img }) => (
       <Image src={img} alt={title} width={288} height={288} class="w-10/12 md:w-7/12 h-auto" draggable="false" />
     ))
   }
+    {
+      coursesVideos.map((video) => (
+        <iframe
+          src={video}
+          class="w-10/12 md:w-7/12 aspect-video"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          frameborder="0"
+          draggable="false"/>
+      ))
+    }
 </article>
