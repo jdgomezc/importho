@@ -51,7 +51,7 @@ export function Navigation({ courses }: Props) {
       <NavigationMenu className="hidden md:flex">
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger className={"text-zinc-600"}>
+            <NavigationMenuTrigger className={"text-zinc-700 cursor-pointer"}>
               Catálogo
             </NavigationMenuTrigger>
             <NavigationMenuContent>
@@ -70,7 +70,7 @@ export function Navigation({ courses }: Props) {
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuTrigger className={"text-zinc-600"}>
+            <NavigationMenuTrigger className={"text-zinc-700 cursor-pointer"}>
               Cursos
             </NavigationMenuTrigger>
             <NavigationMenuContent>
@@ -104,7 +104,7 @@ export function Navigation({ courses }: Props) {
           <NavigationMenuItem>
             <a
               href="/contact"
-              className={cn(navigationMenuTriggerStyle(), "text-zinc-600")}
+              className={cn(navigationMenuTriggerStyle(), "text-zinc-700")}
             >
               Contáctanos
             </a>
@@ -126,7 +126,7 @@ const ListItem = forwardRef<ElementRef<"a">, ComponentPropsWithoutRef<"a">>(
             ref={ref}
             className={cn(
               "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-              className
+              className,
             )}
             {...props}
           >
@@ -140,7 +140,7 @@ const ListItem = forwardRef<ElementRef<"a">, ComponentPropsWithoutRef<"a">>(
         </NavigationMenuLink>
       </li>
     );
-  }
+  },
 );
 
 ListItem.displayName = "ListItem";
