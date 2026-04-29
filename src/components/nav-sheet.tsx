@@ -13,6 +13,9 @@ interface Props {
   courses: {
     title: string;
     slug: string;
+    description?: string;
+    status?: "past" | "active" | "upcoming";
+    year?: number;
   }[];
 }
 
@@ -66,13 +69,14 @@ export function NavSheet({ courses, className }: Props) {
             <div className="space-y-4">
               <h4 className="font-bold text-lg text-primary">Cursos</h4>
               <div className="flex flex-col gap-4">
-                {courses?.map(({ title, slug }) => (
+                {courses?.map(({ title, slug, status, year }) => (
                   <SheetClose asChild key={slug}>
                     <a
                       href={slug}
                       className="text-sm text-muted-foreground hover:text-primary transition-colors max-w-72"
                     >
                       {title}
+                      {status === "past" && year ? ` (Curso pasado ${year})` : ""}
                     </a>
                   </SheetClose>
                 ))}

@@ -1,6 +1,13 @@
 ---
 import { Image } from "astro:assets";
 
+interface Props {
+  showPastBanner?: boolean;
+  showVideos?: boolean;
+}
+
+const { showPastBanner = true, showVideos = true } = Astro.props;
+
 const courses = [
   {
     title: "Cursos",
@@ -18,20 +25,33 @@ const coursesVideos = [
 ---
 
 <article class="flex flex-col justify-center w-full my-8 mt-16 mx-auto items-center gap-16">
-  {
-    courses.map(({ title, img }) => (
-      <Image src={img} alt={title} width={288} height={288} class="w-10/12 md:w-7/12 h-auto" draggable="false" loading="lazy" decoding="async" />
-    ))
-  }
-    {
-      coursesVideos.map((video) => (
-        <iframe
-          src={video}
-          class="w-10/12 md:w-7/12 aspect-video"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          frameborder="0"
-          draggable="false"/>
-      ))
-    }
+  {showPastBanner && (
+    <>
+      <div class="w-10/12 md:w-7/12 flex flex-col gap-2 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary">Cursos pasados</h2>
+        <p class="text-zinc-600">POCNC fue impartido en 2025.</p>
+      </div>
+      {
+        courses.map(({ title, img }) => (
+          <Image src={img} alt={title} width={288} height={288} class="w-10/12 md:w-7/12 h-auto" draggable="false" loading="lazy" decoding="async" />
+        ))
+      }
+    </>
+  )}
+  {showVideos && (
+    <>
+      {
+        coursesVideos.map((video) => (
+          <iframe
+            src={video}
+            class="w-10/12 md:w-7/12 aspect-video"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            frameborder="0"
+            draggable="false"
+          />
+        ))
+      }
+    </>
+  )}
 </article>

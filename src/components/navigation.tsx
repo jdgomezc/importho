@@ -19,6 +19,8 @@ interface Props {
     title: string;
     slug: string;
     description?: string;
+    status?: "past" | "active" | "upcoming";
+    year?: number;
   }[];
 }
 
@@ -85,7 +87,9 @@ export function Navigation({ courses }: Props) {
                         {course.title}
                       </h3>
                       <p className="text-zinc-500 text-xs leading">
-                        {course?.description}
+                        {course.status === "past" && course.year
+                          ? `Curso pasado (${course.year}). ${course?.description ?? ""}`.trim()
+                          : course?.description}
                       </p>
                     </a>
                   </li>

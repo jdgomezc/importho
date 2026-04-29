@@ -9,6 +9,9 @@ const courses_collection = await getCollection("courses");
 const courses = courses_collection.map((course) => ({
   title: course.data.title,
   slug: `/courses/${course.slug}`,
+  description: course.data.description,
+  status: course.data.status,
+  year: course.data.year,
 }));
 
 ---
