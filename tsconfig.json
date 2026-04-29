@@ -9,12 +9,18 @@
   ],
   "compilerOptions": {
     "baseUrl": ".",
+    "types": [
+      "astro/client"
+    ],
+    "plugins": [
+      {
+        "name": "@astrojs/ts-plugin"
+      }
+    ],
     "paths": {
       "@/*": [
         "./src/*"
       ]
-    },
-    "jsx": "react-jsx",
-    "jsxImportSource": "react"
+    }
   }
 }
