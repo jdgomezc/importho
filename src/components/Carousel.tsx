@@ -6,8 +6,8 @@ import {
   CarouselItem,
 } from "@/components/ui/imaages-carousel";
 
-import mouthwashers from "@/assets/mouthwashers/mouthwasher-3.jpg";
-import banner_2 from "@/assets/banner/banner-2.png";
+import mouthwashers from "@/assets/mouthwashers/mouthwasher-3.webp";
+import banner_2 from "@/assets/banner/banner-2.webp";
 
 interface Props {
   courses: {
@@ -47,6 +47,9 @@ export default function ImagesCarousel({ courses }: Props) {
                     alt={title}
                     className="w-full h-auto object-cover"
                     draggable="false"
+                    loading={i === 0 ? "eager" : "lazy"}
+                    decoding="async"
+                    fetchPriority={i === 0 ? "high" : "low"}
                   />
                 </CardContent>
               </Card>
@@ -65,6 +68,9 @@ export default function ImagesCarousel({ courses }: Props) {
                     alt={`banner-${i + 1}`}
                     className="w-full h-auto object-cover"
                     draggable="false"
+                    loading={i === 0 ? "eager" : "lazy"}
+                    decoding="async"
+                    fetchPriority={i === 0 ? "high" : "low"}
                   />
                 </CardContent>
               </Card>

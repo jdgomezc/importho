@@ -1,7 +1,7 @@
 ---
 title: STRAIGHT WIRE (ROLLED)
 price: Q 2,400.00
-img: /products/gummetal/straight-wire-rolled.png
+img: /products/gummetal/straight-wire-rolled.webp
 brand: Gummetal
 name: straight-wire-rolled
 slug: straight-wire-rolled

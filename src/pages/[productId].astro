@@ -40,6 +40,8 @@ const { Content } = await render(product)
             height={288}
             transition:name={`img-${slug}`}
             class="w-full h-auto md:h-[30rem] md:w-[30rem] my-12 md:my-24 md:mt-0 object-contain" draggable="false"
+            loading="eager"
+            decoding="async"
           />
         </section>
       </article>

@@ -86,6 +86,7 @@ export function Results({ products }: Props) {
                       draggable="false"
                       loading="lazy"
                       decoding="async"
+                      fetchPriority="low"
                     />
                     <section className="flex flex-col">
                       <h2 className="text-base font-bold text-zinc-700">

@@ -3,7 +3,7 @@ import "../styles/global.css";
 import Carousel from '@/components/Carousel.tsx';
 import Layout from '@/layouts/Layout.astro';
 import { Image } from 'astro:assets';
-import logo from '@/assets/importho.png';
+import logo from '@/assets/importho.webp';
 import FeaturedProducts from '@/components/featured-products.astro';
 import { getCollection } from "astro:content";
 import Courses from '@/components/courses.astro';
@@ -25,6 +25,8 @@ const courses = courses_collection.map(({ data: { title, img, description }, slu
 				alt="Importho Logo"
 				class="w-10/12 md:w-[50rem] h-auto" 
 				draggable="false"
+				loading="eager"
+				decoding="async"
 			/>
 	</section>
 

@@ -20,6 +20,8 @@ const courses = await getCollection("courses");
         height={288}
         transition:name={`img-${slug}`}
         class="w-full h-auto" draggable="false"
+        loading="lazy"
+        decoding="async"
       />
       </a>
     ))

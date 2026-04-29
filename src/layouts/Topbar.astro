@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import logo from '@/assets/importho.png';
+import logo from '@/assets/importho.webp';
 import { Navigation } from '@/components/navigation.tsx';
 import { Search } from '@/components/search.tsx';
 import { getCollection } from 'astro:content';
@@ -16,7 +16,7 @@ const courses = courses_collection.map((course) => ({
   <div class="mx-auto flex justify-between items-center">
     <div class="flex items-center space-x-8">
       <a href="/">
-        <Image src={logo} alt="Importho Logo" width="160" />
+        <Image src={logo} alt="Importho Logo" width="160" loading="eager" decoding="async" />
       </a>
       <Navigation client:load courses={courses} />
     </div>

@@ -1,7 +1,7 @@
 ---
 title: BRACKET DE MOLAR
 price: Q 60.00
-img: /products/importho/bracket-de-molar.png
+img: /products/importho/bracket-de-molar.webp
 brand: Importho
 name: bracket-de-molar
 slug: bracket-de-molar

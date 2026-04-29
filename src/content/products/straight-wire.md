@@ -1,7 +1,7 @@
 ---
 title: STRAIGHT WIRE (5 BARRAS)
 price: Q 1,200.00
-img: /products/gummetal/straight-wire.png
+img: /products/gummetal/straight-wire.webp
 brand: Gummetal
 name: straight-wire
 slug: straight-wire

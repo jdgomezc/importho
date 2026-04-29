@@ -1,7 +1,7 @@
 ---
 title: ARCHWIRE NATURAL FORM (PAQUETE DE 5)
 price: Q 600.00
-img: /products/gummetal/archwire-natural-form.png
+img: /products/gummetal/archwire-natural-form.webp
 brand: Gummetal
 name: archwire-natural-form
 slug: archwire-natural-form

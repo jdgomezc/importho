@@ -1,7 +1,7 @@
 ---
 title: BRACKETS RICKETTS BIOPROGRESIVA ROTH, MBT (10 CASOS)
 price: Q 1,200.00
-img: /products/importho/brackets-ricketts.png
+img: /products/importho/brackets-ricketts.webp
 brand: Importho
 name: brackets-ricketts
 slug: brackets-ricketts
