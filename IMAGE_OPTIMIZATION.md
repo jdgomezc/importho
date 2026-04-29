@@ -93,7 +93,12 @@ Si solo conviertes y no actualizas referencias, la app puede seguir buscando `.p
 - Configuracion sugerida:
   - Build command: `pnpm install --frozen-lockfile && pnpm run build`
   - Output directory: `dist`
-  - Node version: `20`
+  - Node version: `20` o superior (recomendado `20.11+`)
+- Este repo usa lockfile de `pnpm` v9. Si Cloudflare usa `pnpm` v8, puede ignorar el lockfile y descargar versiones distintas.
+- Para evitar eso, el proyecto declara:
+  - `packageManager: pnpm@9.15.5` en `package.json`
+  - `engines.node >= 20.10.0`
+  - `.nvmrc` en Node 20
 - Si hubo fallo raro de cache, usar "Clear build cache" y redeploy.
 
 ## Troubleshooting rapido
@@ -106,5 +111,10 @@ Si solo conviertes y no actualizas referencias, la app puede seguir buscando `.p
   - limpia cache del navegador
 - **Build falla en CI/Cloudflare**:
   - confirmar version de Node
+  - confirmar version de pnpm (que respete lockfile v9)
   - confirmar comando de build
   - limpiar cache del build
+
+- **Error `node:util does not provide an export named styleText`**:
+  - causa comun: dependencias nuevas instaladas por lockfile ignorado + Node 18
+  - solucion: subir Node a 20+, asegurar `pnpm` v9, limpiar cache y redeploy
