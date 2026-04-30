@@ -37,6 +37,11 @@ export function Navigation({ courses }: Props) {
       // description: "Gummetal es una marca de productos de ortodoncia y su aprendizaje.",
     },
     {
+      title: "PECLAB",
+      href: "/peclab",
+      // description: "Peclab es una marca de anclaje esqueletico y expansores.",
+    },
+    {
       title: "Enjuagues dentales",
       href: "/mouthwashes",
       // description: "Gummetal es una marca de productos de ortodoncia y su aprendizaje.",

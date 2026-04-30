@@ -30,6 +30,10 @@ export function NavSheet({ courses, className }: Props) {
       href: "/gummetal",
     },
     {
+      title: "PECLAB",
+      href: "/peclab",
+    },
+    {
       title: "Enjuagues dentales",
       href: "/mouthwashes",
       // description: "Gummetal es una marca de productos de ortodoncia y su aprendizaje.",

@@ -6,21 +6,25 @@ const { title, img, brand, price, slug } = Astro.props;
 ---
 <li class="w-fit mx-auto">
   <a href={`/${slug}`} class="w-72 flex flex-col gap-4 hover:scale-105 transition-all duration-300 cursor-pointer">
-    <div class="relative w-72 h-72">
+    <div class="product-thumb-frame relative size-72 overflow-hidden rounded-lg ring-1 ring-black/5">
+      <div class="absolute inset-0 bg-product-catalog-slab pointer-events-none" aria-hidden="true" />
+      <div
+        data-product-spinner
+        class="absolute inset-0 z-[1] flex items-center justify-center pointer-events-none"
+      >
+        <Loader2 className="size-7 animate-spin text-white drop-shadow-md" />
+      </div>
       <Image
         src={img}
         alt={title}
         width={288}
         height={288}
-        class="size-72 object-contain z-10 relative"
+        class="relative z-10 size-72 object-contain"
         draggable="false"
         transition:name={`img-${slug}`}
         loading="lazy"
         decoding="async"
       />
-      <div class="absolute inset-0 flex items-center justify-center">
-        <Loader2 className="animate-spin text-primary size-7 z-0" /> 
-      </div>
     </div>
   <section class="flex flex-col">
     <h2 class="text-base font-bold text-zinc-700" transition:name={`title-${slug}`}>{title}</h2>

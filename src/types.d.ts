@@ -6,6 +6,8 @@ declare global {
     img: string;
     brand?: string;
     name?: string;
+    /** Raw markdown body; used for client-side search on /search */
+    body?: string;
     // Add any other relevant fields from your product collection data
   }
 

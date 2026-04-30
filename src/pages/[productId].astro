@@ -32,14 +32,16 @@ const { Content } = await render(product)
           <p class="text-xl md:text-2xl text-zinc-600" transition:name={`price-${slug}`}>{price}</p>
           <Content class="text-zinc-100" />
         </section>
-        <section>
+        <section class="relative w-72 h-72 shrink-0 overflow-hidden rounded-lg ring-1 ring-black/5 my-12 md:my-24 md:mt-0 md:h-[30rem] md:w-[30rem] mx-auto md:mx-0">
+          <div class="absolute inset-0 bg-product-catalog-slab pointer-events-none" aria-hidden="true" />
           <Image
             src={img}
             alt={title}
             width={288}
             height={288}
             transition:name={`img-${slug}`}
-            class="w-full h-auto md:h-[30rem] md:w-[30rem] my-12 md:my-24 md:mt-0 object-contain" draggable="false"
+            class="relative z-10 size-full max-h-full object-contain"
+            draggable="false"
             loading="eager"
             decoding="async"
           />

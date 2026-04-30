@@ -27,16 +27,23 @@ export function Results({ products }: Props) {
 
     if (queryFromUrl) {
       const filtered = products.filter((product) => {
+        const q = queryFromUrl;
         const titleMatch = (product.data.title || "")
           .toLowerCase()
-          .includes(queryFromUrl);
+          .includes(q);
         const brandMatch = (product.data.brand || "")
           .toLowerCase()
-          .includes(queryFromUrl);
+          .includes(q);
         const nameMatch = (product.data.name || "")
           .toLowerCase()
-          .includes(queryFromUrl);
-        return titleMatch || brandMatch || nameMatch;
+          .includes(q);
+        const slugMatch = (product.slug || "").toLowerCase().includes(q);
+        const bodyMatch = (product.data.body || "")
+          .toLowerCase()
+          .includes(q);
+        return (
+          titleMatch || brandMatch || nameMatch || slugMatch || bodyMatch
+        );
       });
       setFilteredProducts(filtered);
     } else {
@@ -79,15 +86,21 @@ export function Results({ products }: Props) {
                     href={`/${slug}`}
                     className="w-72 flex flex-col gap-4 hover:scale-105 transition-all duration-300 cursor-pointer"
                   >
-                    <img
-                      src={img}
-                      alt={title}
-                      className="size-72 bg-gradient-to-b from-zinc-100 to-zinc-300 object-contain"
-                      draggable="false"
-                      loading="lazy"
-                      decoding="async"
-                      fetchPriority="low"
-                    />
+                    <div className="relative size-72 overflow-hidden rounded-lg ring-1 ring-black/5">
+                      <div
+                        className="pointer-events-none absolute inset-0 bg-product-catalog-slab"
+                        aria-hidden
+                      />
+                      <img
+                        src={img}
+                        alt={title}
+                        className="relative z-10 size-full object-contain"
+                        draggable={false}
+                        loading="lazy"
+                        decoding="async"
+                        fetchPriority="low"
+                      />
+                    </div>
                     <section className="flex flex-col">
                       <h2 className="text-base font-bold text-zinc-700">
                         {title}
@@ -105,7 +118,7 @@ export function Results({ products }: Props) {
         <article className="text-center text-lg">
           {searchQuery ? (
             <p>
-              No se encontraron resulatos para <b>{searchQuery}</b>.
+              No se encontraron resultados para <b>{searchQuery}</b>.
             </p>
           ) : (
             <p>No hay productos para mostrar.</p>

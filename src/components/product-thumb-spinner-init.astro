@@ -1,0 +1,19 @@
+<script is:inline>
+  function initProductThumbSpinners() {
+    document.querySelectorAll(".product-thumb-frame img").forEach((img) => {
+      const sp = img.closest(".product-thumb-frame")?.querySelector("[data-product-spinner]");
+      if (!sp || sp.classList.contains("hidden")) return;
+      const done = () => {
+        sp.classList.add("hidden");
+      };
+      if (img.complete && img.naturalWidth > 0) done();
+      else {
+        img.addEventListener("load", done, { once: true });
+        img.addEventListener("error", done, { once: true });
+      }
+    });
+  }
+  initProductThumbSpinners();
+  document.addEventListener("astro:page-load", initProductThumbSpinners);
+  document.addEventListener("astro:after-swap", initProductThumbSpinners);
+</script>

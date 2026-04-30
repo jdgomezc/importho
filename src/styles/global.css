@@ -114,6 +114,19 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+/* Diagonal slab behind product photos (matches catalog blues when assets have no baked-in BG) */
+@layer utilities {
+  .bg-product-catalog-slab {
+    background-image: linear-gradient(
+      145deg,
+      #d7ecf8 0%,
+      #8ec4e2 32%,
+      #0e81b5 68%,
+      #085a82 100%
+    );
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
