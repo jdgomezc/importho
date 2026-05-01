@@ -1,7 +1,7 @@
 ---
 title: KIT BÁSICO
 price: Q 3,250.00
-img: /products/peclab/kit-basico.webp
+img: /products/peclab/kit-plus.webp
 brand: Peclab
 name: kit-basico
 slug: kit-basico
@@ -15,4 +15,4 @@ Incluye:
 - Estuche autoclavable
 - 2 minimplantes extra o interradicular
 
-*Bajo pedido.*
+_Bajo pedido._

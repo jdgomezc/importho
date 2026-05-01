@@ -9,4 +9,4 @@ slug: driver-y-llave-de-insercion
 
 Incluye 2 minimplantes extra o interradicular.
 
-*Imagen con fin ilustrativo de su uso con contraángulo (no incluido).*
+_Imagen con fin ilustrativo de su uso con contraángulo (no incluido)._
