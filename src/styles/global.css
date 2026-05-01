@@ -119,10 +119,10 @@
   .bg-product-catalog-slab {
     background-image: linear-gradient(
       145deg,
-      #d7ecf8 0%,
-      #8ec4e2 32%,
-      #0e81b5 68%,
-      #085a82 100%
+      #eaf5fc 0%,
+      #bfdef4 32%,
+      #65b9e4 68%,
+      #439bc9 100%
     );
   }
 }
