@@ -4,7 +4,14 @@ import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 import Courses from "@/components/courses.astro";
 
-const courses = await getCollection("courses");
+const statusOrder = { upcoming: 0, active: 1, past: 2 };
+
+const courses = (await getCollection("courses")).sort((a, b) => {
+  const statusA = statusOrder[a.data.status ?? "active"] ?? 1;
+  const statusB = statusOrder[b.data.status ?? "active"] ?? 1;
+  if (statusA !== statusB) return statusA - statusB;
+  return (b.data.year ?? 0) - (a.data.year ?? 0);
+});
 
 ---
 <Layout>
