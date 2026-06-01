@@ -19,12 +19,13 @@ const courses = courses_collection
     if (statusA !== statusB) return statusA - statusB;
     return (b.data.year ?? 0) - (a.data.year ?? 0);
   })
-  .map(({ data: { title, img, status, year }, slug }) => ({
+  .map(({ data: { title, img, status, year, carouselBg }, slug }) => ({
     title,
     slug: `/courses/${slug}`,
     img,
     status,
     year,
+    carouselBg,
   }));
 
 ---

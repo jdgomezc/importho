@@ -18,6 +18,7 @@ const courses = defineCollection({
     description: z.string().optional(),
     year: z.number().optional(),
     status: z.enum(["past", "active", "upcoming"]).optional(),
+    carouselBg: z.string().optional(),
   }),
 });
 

@@ -16,6 +16,7 @@ interface Props {
     img: string;
     status?: "past" | "active" | "upcoming";
     year?: number;
+    carouselBg?: string;
   }[];
 }
 
@@ -37,22 +38,47 @@ export default function ImagesCarousel({ courses = [] }: Props) {
       className={`w-full ${height}`}
     >
       <CarouselContent>
-        {courses.map(({ slug, title, img, status, year }, i) => (
+        {courses.map(({ slug, title, img, status, year, carouselBg }, i) => (
           <CarouselItem key={`course-${i}`}>
             <a href={slug} className="select-none relative block">
               <Card className={"p-0 border-0"}>
                 <CardContent
                   className={`flex items-center justify-center p-0 ${height}`}
                 >
-                  <img
-                    src={img}
-                    alt={title}
-                    className="w-full h-auto object-cover"
-                    draggable="false"
-                    loading={i === 0 ? "eager" : "lazy"}
-                    decoding="async"
-                    fetchPriority={i === 0 ? "high" : "low"}
-                  />
+                  {carouselBg ? (
+                    <div
+                      className="w-full px-[18%] sm:px-[20%] md:px-[22%]"
+                      style={{ backgroundColor: carouselBg }}
+                    >
+                      <div className="relative w-full">
+                        <img
+                          src={img}
+                          alt={title}
+                          className="w-full h-auto object-contain"
+                          style={{
+                            WebkitMaskImage:
+                              "linear-gradient(to right, transparent, black 4%, black 96%, transparent)",
+                            maskImage:
+                              "linear-gradient(to right, transparent, black 4%, black 96%, transparent)",
+                          }}
+                          draggable="false"
+                          loading={i === 0 ? "eager" : "lazy"}
+                          decoding="async"
+                          fetchPriority={i === 0 ? "high" : "low"}
+                        />
+                      </div>
+                    </div>
+                  ) : (
+                    <img
+                      src={img}
+                      alt={title}
+                      className="w-full h-auto object-cover"
+                      draggable="false"
+                      loading={i === 0 ? "eager" : "lazy"}
+                      decoding="async"
+                      fetchPriority={i === 0 ? "high" : "low"}
+                    />
+                  )}
                 </CardContent>
               </Card>
               {status === "past" && year && (
