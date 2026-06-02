@@ -107,45 +107,47 @@ export default function NewBrandPeclab({ products }: Props) {
       })}
 
       <div className="relative z-20 mx-auto flex max-w-3xl flex-col items-center gap-4 md:gap-6 px-4 md:px-6 text-center">
-        <div className="relative flex items-center justify-center py-1 md:py-2">
-          <Sparkles
-            className="new-brand-sparkle-bg pointer-events-none absolute -left-4 -top-1 size-8 md:-left-6 md:-top-2 md:size-10 text-[#33b1bd]"
-            aria-hidden
-          />
-          <Sparkles
-            className="new-brand-sparkle-bg pointer-events-none absolute -right-3 top-2 size-5 md:-right-5 md:top-3 md:size-7 text-[#33b1bd]"
-            style={{ animationDelay: "2s" }}
-            aria-hidden
-          />
-          <Sparkles
-            className="new-brand-sparkle-bg pointer-events-none absolute left-1/2 -top-4 size-10 md:-top-6 md:size-14 -translate-x-1/2 text-[#33b1bd]"
-            style={{ animationDelay: "1s" }}
-            aria-hidden
-          />
-          <span className="relative z-10 inline-flex rounded-full border border-[#33b1bd]/30 bg-white/80 px-3.5 py-1 md:px-4 md:py-1.5 text-xs md:text-sm font-semibold text-[#2a9aa5] backdrop-blur-sm">
-            Nueva marca
-          </span>
-        </div>
+        <div className="flex flex-col items-center gap-2.5 md:gap-3">
+          <div className="relative flex items-center justify-center py-0.5 md:py-1">
+            <Sparkles
+              className="new-brand-sparkle-bg pointer-events-none absolute -left-4 -top-1 size-8 md:-left-6 md:-top-2 md:size-10 text-[#33b1bd]"
+              aria-hidden
+            />
+            <Sparkles
+              className="new-brand-sparkle-bg pointer-events-none absolute -right-3 top-2 size-5 md:-right-5 md:top-3 md:size-7 text-[#33b1bd]"
+              style={{ animationDelay: "2s" }}
+              aria-hidden
+            />
+            <Sparkles
+              className="new-brand-sparkle-bg pointer-events-none absolute left-1/2 -top-4 size-10 md:-top-6 md:size-14 -translate-x-1/2 text-[#33b1bd]"
+              style={{ animationDelay: "1s" }}
+              aria-hidden
+            />
+            <span className="relative z-10 inline-flex rounded-full border border-[#33b1bd]/30 bg-white/80 px-3.5 py-1 md:px-4 md:py-1.5 text-[11px] sm:text-[13px] font-semibold text-[#2a9aa5] backdrop-blur-sm">
+              Nueva marca
+            </span>
+          </div>
 
-        <div className="relative px-2 py-3 md:px-12 md:py-8">
-          <div
-            className="pointer-events-none absolute inset-0 rounded-[2rem]"
-            style={{
-              background:
-                "radial-gradient(ellipse 85% 75% at 50% 50%, rgba(51, 177, 189, 0.14) 0%, rgba(51, 177, 189, 0.06) 40%, transparent 72%)",
-            }}
-            aria-hidden
-          />
-          <img
-            src={peclabLogo.src}
-            alt="Peclab"
-            width={peclabLogo.width}
-            height={peclabLogo.height}
-            className="relative w-36 sm:w-44 md:w-64 h-auto mx-auto"
-            loading="lazy"
-            decoding="async"
-            draggable={false}
-          />
+          <div className="relative px-2 pt-0 pb-2 md:px-12 md:pb-6 md:pt-2">
+            <div
+              className="pointer-events-none absolute inset-0 rounded-[2rem]"
+              style={{
+                background:
+                  "radial-gradient(ellipse 85% 75% at 50% 50%, rgba(51, 177, 189, 0.14) 0%, rgba(51, 177, 189, 0.06) 40%, transparent 72%)",
+              }}
+              aria-hidden
+            />
+            <img
+              src={peclabLogo.src}
+              alt="Peclab"
+              width={peclabLogo.width}
+              height={peclabLogo.height}
+              className="relative w-52 md:w-86 h-auto mx-auto"
+              loading="lazy"
+              decoding="async"
+              draggable={false}
+            />
+          </div>
         </div>
 
         <div className="flex flex-col items-center gap-1.5 md:flex-row md:gap-2 text-[#2a9aa5] px-2">
