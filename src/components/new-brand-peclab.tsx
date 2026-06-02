@@ -56,7 +56,7 @@ export default function NewBrandPeclab({ products }: Props) {
   const floatingProducts = products.slice(0, floatSlots.length);
 
   return (
-    <section className="relative w-full overflow-hidden py-14 md:py-20 my-8 md:mt-8 bg-white md:pb-56 md:mb-24">
+    <section className="relative w-full overflow-hidden py-8 md:py-20 mt-0 mb-4 md:my-8 bg-white md:pb-56 md:mb-24 pb-6">
       <div
         className="absolute inset-0 opacity-60"
         style={{
@@ -106,28 +106,28 @@ export default function NewBrandPeclab({ products }: Props) {
         );
       })}
 
-      <div className="relative z-20 mx-auto flex max-w-3xl flex-col items-center gap-6 px-6 text-center">
-        <div className="relative flex items-center justify-center py-2">
+      <div className="relative z-20 mx-auto flex max-w-3xl flex-col items-center gap-4 md:gap-6 px-4 md:px-6 text-center">
+        <div className="relative flex items-center justify-center py-1 md:py-2">
           <Sparkles
-            className="new-brand-sparkle-bg pointer-events-none absolute -left-6 -top-2 size-10 text-[#33b1bd]"
+            className="new-brand-sparkle-bg pointer-events-none absolute -left-4 -top-1 size-8 md:-left-6 md:-top-2 md:size-10 text-[#33b1bd]"
             aria-hidden
           />
           <Sparkles
-            className="new-brand-sparkle-bg pointer-events-none absolute -right-5 top-3 size-7 text-[#33b1bd]"
+            className="new-brand-sparkle-bg pointer-events-none absolute -right-3 top-2 size-5 md:-right-5 md:top-3 md:size-7 text-[#33b1bd]"
             style={{ animationDelay: "2s" }}
             aria-hidden
           />
           <Sparkles
-            className="new-brand-sparkle-bg pointer-events-none absolute left-1/2 -top-6 size-14 -translate-x-1/2 text-[#33b1bd]"
+            className="new-brand-sparkle-bg pointer-events-none absolute left-1/2 -top-4 size-10 md:-top-6 md:size-14 -translate-x-1/2 text-[#33b1bd]"
             style={{ animationDelay: "1s" }}
             aria-hidden
           />
-          <span className="relative z-10 inline-flex rounded-full border border-[#33b1bd]/30 bg-white/80 px-4 py-1.5 text-sm font-semibold text-[#2a9aa5] backdrop-blur-sm">
+          <span className="relative z-10 inline-flex rounded-full border border-[#33b1bd]/30 bg-white/80 px-3.5 py-1 md:px-4 md:py-1.5 text-xs md:text-sm font-semibold text-[#2a9aa5] backdrop-blur-sm">
             Nueva marca
           </span>
         </div>
 
-        <div className="relative px-8 py-6 md:px-12 md:py-8">
+        <div className="relative px-2 py-3 md:px-12 md:py-8">
           <div
             className="pointer-events-none absolute inset-0 rounded-[2rem]"
             style={{
@@ -141,43 +141,46 @@ export default function NewBrandPeclab({ products }: Props) {
             alt="Peclab"
             width={peclabLogo.width}
             height={peclabLogo.height}
-            className="relative w-48 md:w-64 h-auto"
+            className="relative w-36 sm:w-44 md:w-64 h-auto mx-auto"
             loading="lazy"
             decoding="async"
             draggable={false}
           />
         </div>
 
-        <div className="flex items-center gap-2 text-[#2a9aa5]">
-          <FlaskConical className="new-brand-flask size-5 text-[#33b1bd]" />
-          <p className="text-sm md:text-base text-zinc-600 max-w-md">
+        <div className="flex flex-col items-center gap-1.5 md:flex-row md:gap-2 text-[#2a9aa5] px-2">
+          <FlaskConical className="new-brand-flask size-4 md:size-5 text-[#33b1bd] shrink-0" />
+          <p className="text-xs sm:text-sm md:text-base text-zinc-600 max-w-xs md:max-w-md leading-relaxed">
             Anclaje esquelético, expansores palatinos y mini implantes de
             precisión
           </p>
         </div>
 
-        <div className="flex gap-3 overflow-x-auto pb-2 md:hidden w-full justify-center">
+        <div className="grid grid-cols-2 gap-2.5 w-full max-w-[240px] sm:max-w-[280px] md:hidden px-1">
           {floatingProducts.slice(0, 4).map((product) => (
             <a
               key={product.slug}
               href={`/${product.slug}`}
-              className="shrink-0 rounded-xl bg-white p-2 border border-zinc-200 shadow-sm"
+              className="flex flex-col items-center gap-1.5 rounded-xl bg-white p-2.5 border border-zinc-200/80 shadow-sm active:scale-95 transition-transform"
             >
               <img
                 src={product.img}
                 alt={product.title}
-                className="w-14 h-14 object-contain"
+                className="w-16 h-16 sm:w-[4.5rem] sm:h-[4.5rem] object-contain"
                 loading="lazy"
                 decoding="async"
                 draggable={false}
               />
+              <span className="text-[10px] leading-tight text-[#2a9aa5] font-medium line-clamp-2 text-center">
+                {product.title}
+              </span>
             </a>
           ))}
         </div>
 
         <a
           href="/peclab"
-          className="group inline-flex items-center gap-2 rounded-full bg-[#33b1bd] px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#2a9aa5] hover:gap-3 hover:shadow-lg hover:shadow-[#33b1bd]/25"
+          className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#33b1bd] px-5 py-2.5 md:px-6 md:py-3 text-xs sm:text-sm font-semibold text-white transition-all duration-300 hover:bg-[#2a9aa5] hover:gap-3 hover:shadow-lg hover:shadow-[#33b1bd]/25 w-full max-w-[280px] sm:w-auto sm:max-w-none"
         >
           Explorar catálogo Peclab
           <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />

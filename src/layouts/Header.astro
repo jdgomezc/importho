@@ -14,7 +14,7 @@ const courses = courses_collection.map(({ data: { title, description, status, ye
 
 ---
 
-<header class="bg-white p-3 pt-8 md:pt-6 md:p-6 w-full">
+<header class="bg-white p-3 pt-4 md:pt-6 md:p-6 w-full">
   <div class="mx-auto flex justify-between items-center">
     <Navigation client:load courses={courses} />
     <Search client:load />
