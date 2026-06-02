@@ -123,14 +123,14 @@ export default function NewBrandPeclab({ products }: Props) {
               style={{ animationDelay: "1s" }}
               aria-hidden
             />
-            <span className="relative z-10 inline-flex rounded-full border border-[#33b1bd]/30 bg-white/80 px-3.5 py-1 md:px-4 md:py-1.5 text-[11px] sm:text-[13px] font-semibold text-[#2a9aa5] backdrop-blur-sm">
+            <span className="relative z-10 inline-flex rounded-full border border-[#33b1bd]/30 bg-white/80 px-3.5 py-1 md:px-4 md:py-1.5 text-xs md:text-sm font-semibold text-[#2a9aa5] backdrop-blur-sm">
               Nueva línea
             </span>
           </div>
 
           <div className="relative px-2 pt-0 pb-2 md:px-12 md:pb-6 md:pt-2">
             <div
-              className="pointer-events-none absolute inset-0 rounded-[2rem]"
+              className="pointer-events-none absolute inset-0 rounded-4xl"
               style={{
                 background:
                   "radial-gradient(ellipse 85% 75% at 50% 50%, rgba(51, 177, 189, 0.14) 0%, rgba(51, 177, 189, 0.06) 40%, transparent 72%)",
@@ -150,7 +150,7 @@ export default function NewBrandPeclab({ products }: Props) {
           </div>
         </div>
 
-        <p className="-mt-1 md:-mt-2 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.18em] text-[#2a9aa5]">
+        <p className="-mt-1 md:-mt-2 text-xs md:text-sm font-semibold uppercase tracking-[0.18em] text-[#2a9aa5]">
           Lanzamiento 2026
         </p>
 
@@ -172,7 +172,7 @@ export default function NewBrandPeclab({ products }: Props) {
               <img
                 src={product.img}
                 alt={product.title}
-                className="w-16 h-16 sm:w-[4.5rem] sm:h-[4.5rem] object-contain"
+                className="w-16 h-16 sm:w-18 sm:h-18 object-contain"
                 loading="lazy"
                 decoding="async"
                 draggable={false}
