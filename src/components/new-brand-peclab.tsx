@@ -124,7 +124,7 @@ export default function NewBrandPeclab({ products }: Props) {
               aria-hidden
             />
             <span className="relative z-10 inline-flex rounded-full border border-[#33b1bd]/30 bg-white/80 px-3.5 py-1 md:px-4 md:py-1.5 text-[11px] sm:text-[13px] font-semibold text-[#2a9aa5] backdrop-blur-sm">
-              Nueva marca
+              Nueva línea
             </span>
           </div>
 
@@ -149,6 +149,10 @@ export default function NewBrandPeclab({ products }: Props) {
             />
           </div>
         </div>
+
+        <p className="-mt-1 md:-mt-2 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.18em] text-[#2a9aa5]">
+          Lanzamiento 2026
+        </p>
 
         <div className="flex flex-col items-center gap-1.5 md:flex-row md:gap-2 text-[#2a9aa5] px-2">
           <FlaskConical className="new-brand-flask size-4 md:size-5 text-[#33b1bd] shrink-0" />
