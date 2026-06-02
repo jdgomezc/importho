@@ -160,7 +160,7 @@ export default function NewBrandPeclab({ products }: Props) {
 
         <div className="flex flex-col items-center gap-1.5 md:flex-row md:gap-2 text-[#2a9aa5] px-2">
           {/* <FlaskConical className="new-brand-flask size-4 md:size-5 text-[#33b1bd] shrink-0" /> */}
-          <p className="text-xs sm:text-sm md:text-base text-zinc-600 max-w-xs md:max-w-md leading-relaxed">
+          <p className="text-xs md:text-sm text-zinc-600/95 max-w-xs md:max-w-md leading-relaxed">
             Anclaje esquelético, expansores palatinos y mini implantes de
             precisión
           </p>
