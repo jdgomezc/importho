@@ -71,6 +71,10 @@ export default function NewBrandPeclab({ products }: Props) {
           backgroundImage:
             "linear-gradient(#33b1bd 1px, transparent 1px), linear-gradient(90deg, #33b1bd 1px, transparent 1px)",
           backgroundSize: "48px 48px",
+          WebkitMaskImage:
+            "linear-gradient(to bottom, transparent 0%, black 0.5%, black 88%, transparent 100%)",
+          maskImage:
+            "linear-gradient(to bottom, transparent 0%, black 0.5%, black 88%, transparent 100%)",
         }}
         aria-hidden
       />
