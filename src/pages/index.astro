@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Carousel from '@/components/Carousel.tsx';
+import NewBrandPeclab from '@/components/new-brand-peclab.tsx';
 import Layout from '@/layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import logo from '@/assets/importho.webp';
@@ -28,19 +29,30 @@ const courses = courses_collection
     carouselBg,
   }));
 
+const peclabProducts = (await getCollection("products"))
+  .filter(({ data }) => data.brand === "Peclab")
+  .slice(0, 6)
+  .map(({ data: { title, img }, slug }) => ({
+    title,
+    slug,
+    img,
+  }));
+
 ---
 
 <Layout>
-	<section class="flex justify-center pb-36 md:pb-72 pt-8 md:pt-32">
+	<section class="flex justify-center pb-32 md:pb-32 pt-24 md:pt-32">
 		<Image 
 				src={logo} 
 				alt="Importho Logo"
-				class="w-10/12 md:w-1/2 h-auto"
+				class="w-11/12 md:w-1/2 h-auto"
 				draggable="false"
 				loading="eager"
 				decoding="async"
 			/>
 	</section>
+
+	<NewBrandPeclab client:visible products={peclabProducts} />
 
 	<Carousel client:load courses={courses} />
 
