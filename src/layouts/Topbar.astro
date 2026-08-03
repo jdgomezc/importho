@@ -6,13 +6,21 @@ import { Search } from '@/components/search.tsx';
 import { getCollection } from 'astro:content';
 
 const courses_collection = await getCollection("courses");
-const courses = courses_collection.map((course) => ({
-  title: course.data.title,
-  slug: `/courses/${course.slug}`,
-  description: course.data.description,
-  status: course.data.status,
-  year: course.data.year,
-}));
+const statusOrder = { upcoming: 0, active: 1, past: 2 };
+const courses = courses_collection
+  .sort((a, b) => {
+    const statusA = statusOrder[a.data.status ?? "active"] ?? 1;
+    const statusB = statusOrder[b.data.status ?? "active"] ?? 1;
+    if (statusA !== statusB) return statusA - statusB;
+    return (b.data.year ?? 0) - (a.data.year ?? 0);
+  })
+  .map((course) => ({
+    title: course.data.title,
+    slug: `/courses/${course.slug}`,
+    description: course.data.description,
+    status: course.data.status,
+    year: course.data.year,
+  }));
 
 ---
 <header class="bg-white py-4 px-4 md:py-6 md:px-8 w-full" transition:persist="site-header">
