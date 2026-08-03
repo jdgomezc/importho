@@ -17,6 +17,7 @@ interface Props {
     status?: "past" | "active" | "upcoming";
     year?: number;
     carouselBg?: string;
+    carouselEdgeFade?: boolean;
   }[];
 }
 
@@ -38,7 +39,8 @@ export default function ImagesCarousel({ courses = [] }: Props) {
       className={`w-full ${height}`}
     >
       <CarouselContent>
-        {courses.map(({ slug, title, img, status, year, carouselBg }, i) => (
+        {courses.map(
+          ({ slug, title, img, status, year, carouselBg, carouselEdgeFade }, i) => (
           <CarouselItem key={`course-${i}`}>
             <a href={slug} className="select-none relative block">
               <Card className={"p-0 border-0"}>
@@ -47,26 +49,28 @@ export default function ImagesCarousel({ courses = [] }: Props) {
                 >
                   {carouselBg ? (
                     <div
-                      className="w-full px-[18%] sm:px-[20%] md:px-[22%]"
+                      className="relative w-full aspect-[16/9] flex items-center justify-center overflow-hidden"
                       style={{ backgroundColor: carouselBg }}
                     >
-                      <div className="relative w-full">
-                        <img
-                          src={img}
-                          alt={title}
-                          className="w-full h-auto object-contain"
-                          style={{
-                            WebkitMaskImage:
-                              "linear-gradient(to right, transparent, black 4%, black 96%, transparent)",
-                            maskImage:
-                              "linear-gradient(to right, transparent, black 4%, black 96%, transparent)",
-                          }}
-                          draggable="false"
-                          loading={i === 0 ? "eager" : "lazy"}
-                          decoding="async"
-                          fetchPriority={i === 0 ? "high" : "low"}
-                        />
-                      </div>
+                      <img
+                        src={img}
+                        alt={title}
+                        className="h-full w-auto max-w-full object-contain"
+                        style={
+                          carouselEdgeFade === false
+                            ? undefined
+                            : {
+                                WebkitMaskImage:
+                                  "linear-gradient(to right, transparent, black 4%, black 96%, transparent)",
+                                maskImage:
+                                  "linear-gradient(to right, transparent, black 4%, black 96%, transparent)",
+                              }
+                        }
+                        draggable="false"
+                        loading={i === 0 ? "eager" : "lazy"}
+                        decoding="async"
+                        fetchPriority={i === 0 ? "high" : "low"}
+                      />
                     </div>
                   ) : (
                     <img
