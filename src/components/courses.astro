@@ -19,7 +19,6 @@ const coursesVideos = [
   "https://www.youtube.com/embed/IJRFvaKmEC4?autoplay=1&mute=1&loop=1&playlist=IJRFvaKmEC4&rel=0&modestbranding=1&showinfo=0",
   "https://www.youtube.com/embed/r32B-f8lI58?autoplay=0&rel=0&modestbranding=1&showinfo=0",
   "https://www.youtube.com/embed/kevIL0z3pfo?autoplay=0&rel=0&modestbranding=1&showinfo=0",
-  "https://www.youtube.com/embed/LP2v1iEsmWg?autoplay=0&rel=0&modestbranding=1&showinfo=0",
   "https://www.youtube.com/embed/ps-Q8pMZJZI?autoplay=0&rel=0&modestbranding=1&showinfo=0",
 ]
 
@@ -45,7 +44,7 @@ const coursesVideos = [
         coursesVideos.map((video) => (
           <iframe
             src={video}
-            class="w-10/12 md:w-7/12 aspect-video"
+            class="w-10/12 aspect-[9/16] md:w-7/12 md:aspect-video"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
             frameborder="0"

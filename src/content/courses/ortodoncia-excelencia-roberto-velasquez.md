@@ -7,4 +7,5 @@ year: 2026
 status: upcoming
 carouselBg: "#000000"
 carouselEdgeFade: false
+carouselMobilePad: true
 ---

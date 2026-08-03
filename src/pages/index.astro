@@ -20,7 +20,7 @@ const courses = courses_collection
     if (statusA !== statusB) return statusA - statusB;
     return (b.data.year ?? 0) - (a.data.year ?? 0);
   })
-  .map(({ data: { title, img, status, year, carouselBg, carouselEdgeFade }, slug }) => ({
+  .map(({ data: { title, img, status, year, carouselBg, carouselEdgeFade, carouselMobilePad }, slug }) => ({
     title,
     slug: `/courses/${slug}`,
     img,
@@ -28,6 +28,7 @@ const courses = courses_collection
     year,
     carouselBg,
     carouselEdgeFade,
+    carouselMobilePad,
   }));
 
 const peclabProducts = (await getCollection("products"))

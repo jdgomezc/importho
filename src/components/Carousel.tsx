@@ -18,6 +18,7 @@ interface Props {
     year?: number;
     carouselBg?: string;
     carouselEdgeFade?: boolean;
+    carouselMobilePad?: boolean;
   }[];
 }
 
@@ -40,7 +41,19 @@ export default function ImagesCarousel({ courses = [] }: Props) {
     >
       <CarouselContent>
         {courses.map(
-          ({ slug, title, img, status, year, carouselBg, carouselEdgeFade }, i) => (
+          (
+            {
+              slug,
+              title,
+              img,
+              status,
+              year,
+              carouselBg,
+              carouselEdgeFade,
+              carouselMobilePad,
+            },
+            i,
+          ) => (
           <CarouselItem key={`course-${i}`}>
             <a href={slug} className="select-none relative block">
               <Card className={"p-0 border-0"}>
@@ -49,23 +62,21 @@ export default function ImagesCarousel({ courses = [] }: Props) {
                 >
                   {carouselBg ? (
                     <div
-                      className="relative w-full aspect-[16/9] flex items-center justify-center overflow-hidden"
+                      className={[
+                        "relative w-full md:aspect-[16/9] flex items-center justify-center overflow-hidden",
+                        carouselMobilePad ? "px-[18%] sm:px-[20%] md:px-0" : "",
+                      ].join(" ")}
                       style={{ backgroundColor: carouselBg }}
                     >
                       <img
                         src={img}
                         alt={title}
-                        className="h-full w-auto max-w-full object-contain"
-                        style={
+                        className={[
+                          "w-full h-auto object-contain md:h-full md:w-auto md:max-w-full",
                           carouselEdgeFade === false
-                            ? undefined
-                            : {
-                                WebkitMaskImage:
-                                  "linear-gradient(to right, transparent, black 4%, black 96%, transparent)",
-                                maskImage:
-                                  "linear-gradient(to right, transparent, black 4%, black 96%, transparent)",
-                              }
-                        }
+                            ? ""
+                            : "md:[mask-image:linear-gradient(to_right,transparent,black_4%,black_96%,transparent)] md:[-webkit-mask-image:linear-gradient(to_right,transparent,black_4%,black_96%,transparent)]",
+                        ].join(" ")}
                         draggable="false"
                         loading={i === 0 ? "eager" : "lazy"}
                         decoding="async"
