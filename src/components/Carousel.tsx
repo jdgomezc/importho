@@ -96,7 +96,7 @@ export default function ImagesCarousel({ courses = [] }: Props) {
                   )}
                 </CardContent>
               </Card>
-              {status === "past" && year && (
+              {(status ?? "past") === "past" && year && (
                 <span className="absolute top-3 left-3 md:top-5 md:left-5 bg-zinc-900/80 text-zinc-100 text-xs md:text-sm font-semibold px-3 py-1 rounded-full">
                   Curso pasado {year}
                 </span>

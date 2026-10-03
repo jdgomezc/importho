@@ -92,7 +92,7 @@ export function Navigation({ courses }: Props) {
                         {course.title}
                       </h3>
                       <p className="text-zinc-500 text-xs leading">
-                        {course.status === "past" && course.year
+                        {(course.status ?? "past") === "past" && course.year
                           ? `Curso pasado (${course.year}). ${course?.description ?? ""}`.trim()
                           : course?.description}
                       </p>

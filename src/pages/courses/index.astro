@@ -7,8 +7,8 @@ import Courses from "@/components/courses.astro";
 const statusOrder = { upcoming: 0, active: 1, past: 2 };
 
 const courses = (await getCollection("courses")).sort((a, b) => {
-  const statusA = statusOrder[a.data.status ?? "active"] ?? 1;
-  const statusB = statusOrder[b.data.status ?? "active"] ?? 1;
+  const statusA = statusOrder[a.data.status ?? "past"] ?? 2;
+  const statusB = statusOrder[b.data.status ?? "past"] ?? 2;
   if (statusA !== statusB) return statusA - statusB;
   return (b.data.year ?? 0) - (a.data.year ?? 0);
 });
@@ -35,7 +35,7 @@ const courses = (await getCollection("courses")).sort((a, b) => {
           loading="lazy"
           decoding="async"
         />
-          {status === "past" && year && (
+          {(status ?? "past") === "past" && year && (
             <span class="absolute top-3 left-3 bg-zinc-900/80 text-zinc-100 text-xs font-semibold px-3 py-1 rounded-full">
               Curso pasado {year}
             </span>

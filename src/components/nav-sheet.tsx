@@ -80,7 +80,7 @@ export function NavSheet({ courses, className }: Props) {
                       className="text-sm text-muted-foreground hover:text-primary transition-colors max-w-72"
                     >
                       {title}
-                      {status === "past" && year ? ` (Curso pasado ${year})` : ""}
+                      {(status ?? "past") === "past" && year ? ` (Curso pasado ${year})` : ""}
                     </a>
                   </SheetClose>
                 ))}

@@ -7,8 +7,8 @@ const courses_collection = await getCollection("courses");
 const statusOrder = { upcoming: 0, active: 1, past: 2 };
 const courses = courses_collection
   .sort((a, b) => {
-    const statusA = statusOrder[a.data.status ?? "active"] ?? 1;
-    const statusB = statusOrder[b.data.status ?? "active"] ?? 1;
+    const statusA = statusOrder[a.data.status ?? "past"] ?? 2;
+    const statusB = statusOrder[b.data.status ?? "past"] ?? 2;
     if (statusA !== statusB) return statusA - statusB;
     return (b.data.year ?? 0) - (a.data.year ?? 0);
   })
@@ -16,7 +16,7 @@ const courses = courses_collection
     title,
     slug: `/courses/${slug}`,
     description,
-    status,
+    status: status ?? "past",
     year,
   }));
 

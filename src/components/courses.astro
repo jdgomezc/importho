@@ -16,10 +16,31 @@ const courses = [
 ];
 
 const coursesVideos = [
-  "https://www.youtube.com/embed/IJRFvaKmEC4?autoplay=1&mute=1&loop=1&playlist=IJRFvaKmEC4&rel=0&modestbranding=1&showinfo=0",
-  "https://www.youtube.com/embed/r32B-f8lI58?autoplay=0&rel=0&modestbranding=1&showinfo=0",
-  "https://www.youtube.com/embed/kevIL0z3pfo?autoplay=0&rel=0&modestbranding=1&showinfo=0",
-  "https://www.youtube.com/embed/ps-Q8pMZJZI?autoplay=0&rel=0&modestbranding=1&showinfo=0",
+  {
+    src: "https://www.youtube.com/embed/Nh9O7mmcrkQ?autoplay=1&mute=1&rel=0&modestbranding=1",
+    title: "Ortodoncia de Excelencia RECAP",
+    short: true,
+  },
+  {
+    src: "https://www.youtube.com/embed/IJRFvaKmEC4?rel=0&modestbranding=1&showinfo=0",
+    title: "Curso",
+    short: false,
+  },
+  {
+    src: "https://www.youtube.com/embed/r32B-f8lI58?autoplay=0&rel=0&modestbranding=1&showinfo=0",
+    title: "Curso",
+    short: false,
+  },
+  {
+    src: "https://www.youtube.com/embed/kevIL0z3pfo?autoplay=0&rel=0&modestbranding=1&showinfo=0",
+    title: "Curso",
+    short: false,
+  },
+  {
+    src: "https://www.youtube.com/embed/ps-Q8pMZJZI?autoplay=0&rel=0&modestbranding=1&showinfo=0",
+    title: "Curso",
+    short: false,
+  },
 ]
 
 ---
@@ -41,10 +62,15 @@ const coursesVideos = [
   {showVideos && (
     <>
       {
-        coursesVideos.map((video) => (
+        coursesVideos.map(({ src, title, short }) => (
           <iframe
-            src={video}
-            class="w-10/12 aspect-[9/16] md:w-7/12 md:aspect-video"
+            src={src}
+            title={title}
+            class:list={[
+              short
+                ? "w-10/12 max-w-sm aspect-[9/16]"
+                : "w-10/12 aspect-[9/16] md:w-7/12 md:aspect-video",
+            ]}
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
             frameborder="0"
